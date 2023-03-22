@@ -60,14 +60,14 @@ public interface UserInterfaceTesla {
     default void display3AndSTow(){
         System.out.println("Tow Hitch Option");
         System.out.println();
-        System.out.println("We're sorry, this Model currently does not offer Tow Hitches, please enter 0 to continue");
+        System.out.println("We're sorry, this Model currently does not offer Tow Hitches, please enter 1 to continue");
 
     }
     default void display3AndYInteriorColors(){
         System.out.println("Please chose an interior color");
         System.out.println();
-        System.out.println("Black    ------    $0.00");
-        System.out.println("White    ------    $1000.00");
+        System.out.println("1: Black    ------    $0.00");
+        System.out.println("2: White    ------    $1000.00");
     }
 
     default void displayNumberOfSeats3AndS(){
@@ -79,16 +79,16 @@ public interface UserInterfaceTesla {
     default void displayAutopilotTypes(){
         System.out.println("Please choose a level of Autopilot");
         System.out.println();
-        System.out.println("Autopilot             ------    $0.00");
-        System.out.println("Enhanced Autopilot    ------    $6,000.00");
-        System.out.println("Full-Self Driving     ------    $15,000.00");
+        System.out.println("1: Autopilot             ------    $0.00");
+        System.out.println("2: Enhanced Autopilot    ------    $6,000.00");
+        System.out.println("3: Full-Self Driving     ------    $15,000.00");
     }
 
     default void displayChargingTypes(){
         System.out.println("Please choose a type of charger you would like");
         System.out.println();
-        System.out.println("Mobile Bundle     ------    $230.00");
-        System.out.println("Wall Connector    ------    $425.00");
+        System.out.println("1: Mobile Bundle     ------    $230.00");
+        System.out.println("2: Wall Connector    ------    $425.00");
 
     }
 

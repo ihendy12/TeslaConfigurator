@@ -4,6 +4,18 @@ import java.util.Scanner;
 
 public class Main implements Runnable, UserInterfaceTesla {
     private Scanner keyboard = new Scanner(System.in);
+    int modelChoice = 0;
+    int trimChoice = 0;
+    int exteriorChoice = 0;
+    int wheelChoice = 0;
+    int towChoice = 0;
+    int interiorChoice = 0;
+    int seatsChoice = 0;
+    int autoPilotChoice = 0;
+    int chargingChoice = 0;
+
+
+
 
     public static void main(String[] args) {
 
@@ -28,12 +40,86 @@ public class Main implements Runnable, UserInterfaceTesla {
 
                 //Choose a Model
                 displayModels();
-                int modelChoice = keyboard.nextInt();
+                modelChoice = keyboard.nextInt();
 
                 //MODEL 3
                 if (modelChoice == 1){
                     display3TrimLevels();
+                    trimChoice = keyboard.nextInt();
+
+                    //If Performance, this way since they have some features provided that are options elsewhere
+                    if (trimChoice == 3){
+
+                        display3PerformanceWheelType();
+                        wheelChoice = keyboard.nextInt();
+
+                        display3AndYExteriorColors();
+                        exteriorChoice = keyboard.nextInt();
+
+                        display3AndYInteriorColors();
+                        interiorChoice = keyboard.nextInt();
+
+                        display3AndSTow();
+                        towChoice = keyboard.nextInt();
+
+                        displayNumberOfSeats3AndS();
+                        seatsChoice = keyboard.nextInt();
+
+                        displayAutopilotTypes();
+                        autoPilotChoice = keyboard.nextInt();
+
+                        displayChargingTypes();
+                        chargingChoice =keyboard.nextInt();
+
+                    } else {
+                        display3WheelTypes();
+                        wheelChoice = keyboard.nextInt();
+
+                        display3AndYExteriorColors();
+                        exteriorChoice = keyboard.nextInt();
+
+                        display3AndYInteriorColors();
+                        interiorChoice = keyboard.nextInt();
+
+                        display3AndSTow();
+                        towChoice = keyboard.nextInt();
+
+                        displayNumberOfSeats3AndS();
+                        seatsChoice = keyboard.nextInt();
+
+                        displayAutopilotTypes();
+                        autoPilotChoice = keyboard.nextInt();
+
+                        displayChargingTypes();
+                        chargingChoice =keyboard.nextInt();
+
+                    }
+
+                    displayTotalPricing();
+                    System.out.println("Here is your configuration");
+                    System.out.println();
+                    System.out.println(modelChoice);
+                    System.out.println(trimChoice);
+                    System.out.println(exteriorChoice);
+                    System.out.println(wheelChoice);
+                    System.out.println(interiorChoice);
+                    System.out.println(autoPilotChoice);
+                    System.out.println(chargingChoice);
+                    System.out.println(towChoice);
+                    System.out.println(seatsChoice);
+                    System.out.println();
+                    System.out.println("Total Price: ");
+
+                    endOfProgram();
+                    run = false;
+
+
                 }
+
+
+
+
+
 
                 //MODEL Y
                 else if (modelChoice == 2){
