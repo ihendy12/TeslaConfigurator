@@ -1,5 +1,7 @@
 package org.example;
 
+import java.sql.SQLOutput;
+
 public interface UserInterfaceTesla {
 
     //Main Menu
@@ -33,6 +35,8 @@ public interface UserInterfaceTesla {
     }
 
     default void display3AndYExteriorColors(){
+        System.out.println("Please choose an exterior color");
+        System.out.println();
         System.out.println("1: Pearl White         ------     $0.00");
         System.out.println("2: Midnight Silver     ------    +$1,000.00");
         System.out.println("3: Deep Blue Metallic  ------    +$1,000.00");
@@ -41,30 +45,51 @@ public interface UserInterfaceTesla {
     }
 
     default void display3WheelTypes(){
+        System.out.println("Please choose a wheel");
+        System.out.println();
         System.out.println("1: 18\" Aero wheels   ------    $0.00");
         System.out.println("2: 19\" Sport wheels  ------    $1500.00");
     }
 
     default void display3PerformanceWheelType(){
+        System.out.println("Please choose a wheel (Performance trim comes with Uberturbine wheels)");
+        System.out.println();
         System.out.println("1: 20\" Uberturbine wheels    ------    $0.00");
     }
 
     default void display3AndSTow(){
         System.out.println("Tow Hitch Option");
         System.out.println();
-        System.out.println("We're sorry, this Model currently does not offer Tow Hitches, please hit ENTER to continue");
+        System.out.println("We're sorry, this Model currently does not offer Tow Hitches, please enter 0 to continue");
 
     }
     default void display3AndYInteriorColors(){
-        System.out.println("Model 3    ------    $");
+        System.out.println("Please chose an interior color");
+        System.out.println();
+        System.out.println("Black    ------    $0.00");
+        System.out.println("White    ------    $1000.00");
+    }
+
+    default void displayNumberOfSeats3AndS(){
+        System.out.println("Please choose the number of seats");
+        System.out.println();
+        System.out.println("1: 5 Seats");
     }
 
     default void displayAutopilotTypes(){
-        System.out.println("Model 3    ------    $");
+        System.out.println("Please choose a level of Autopilot");
+        System.out.println();
+        System.out.println("Autopilot             ------    $0.00");
+        System.out.println("Enhanced Autopilot    ------    $6,000.00");
+        System.out.println("Full-Self Driving     ------    $15,000.00");
     }
 
     default void displayChargingTypes(){
-        System.out.println("Model 3    ------    $");
+        System.out.println("Please choose a type of charger you would like");
+        System.out.println();
+        System.out.println("Mobile Bundle     ------    $230.00");
+        System.out.println("Wall Connector    ------    $425.00");
+
     }
 
     default void displayTotalPricing(){
