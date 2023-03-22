@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.Scanner;
 
-public class Main implements Runnable {
+public class Main implements Runnable, UserInterfaceTesla {
     private Scanner keyboard = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -14,52 +14,57 @@ public class Main implements Runnable {
 
     @Override
     public void run() {
-        printMainMenu();
-        displayModels();
+        boolean run = true;
+        //MAIN MENU
+
+        while(run) {
+            printMainMenu();
+
+            int mainMenuChoice = keyboard.nextInt();
+
+
+            //SENDS TO BUILDER
+            if (mainMenuChoice == 1) {
+
+                //Choose a Model
+                displayModels();
+                int modelChoice = keyboard.nextInt();
+
+                //MODEL 3
+                if (modelChoice == 1){
+                    display3TrimLevels();
+                }
+
+                //MODEL Y
+                else if (modelChoice == 2){
+                    displayYTrimLevels();
+                }
+
+
+                //MODEL S
+                else if (modelChoice == 3){
+                    displaySTrimLevels();
+                }
+
+
+                //MODEL X
+                else if(modelChoice == 4){
+                    displayXTrimLevels();
+                }
+
+
+            }
+            //ENDS PROGRAM
+            else if (mainMenuChoice == 2) {
+                run = false;
+                endOfProgram();
+            }
+
+        }
+
+
     }
 
-    private void printMainMenu() {
 
-        System.out.println("Welcome to the Tesla Configurator");
-        System.out.println();
-        System.out.println("1: Build your Tesla!");
-        System.out.println("2: Exit");
-        System.out.println();
-    }
-
-    private void displayModels(){
-        System.out.println("Model 3    ------    $");
-        System.out.println("Model Y    ------    $");
-        System.out.println("Model S    ------    $");
-        System.out.println("Model X    ------    $");
-    }
-
-    private void displayTrimLevels(){
-        System.out.println("Model 3    ------    $");
-    }
-
-    private void displayExteriorColors(){
-        System.out.println("Model 3    ------    $");
-    }
-
-    private void displayWheelTypes(){
-        System.out.println("Model 3    ------    $");
-    }
-
-    private void displayInteriorColors(){
-        System.out.println("Model 3    ------    $");
-    }
-
-    private void displayAutopilotTypes(){
-        System.out.println("Model 3    ------    $");
-    }
-
-    private void displayChargingTypes(){
-        System.out.println("Model 3    ------    $");
-    }
-
-    private void displayTotalPricing(){
-
-    }
 
 }
