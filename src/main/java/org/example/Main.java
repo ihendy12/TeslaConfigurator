@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main implements Runnable, UserInterfaceTesla {
     private Scanner keyboard = new Scanner(System.in);
@@ -291,7 +292,11 @@ public class Main implements Runnable, UserInterfaceTesla {
             // RETURNS EXISTING ORDERS
             else if (mainMenuChoice == 2){
                 System.out.println("Currently working on this section, come back later!");
-
+                try {
+                    TimeUnit.SECONDS.sleep(2);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
             }
             //ENDS PROGRAM
             else if (mainMenuChoice == 3) {

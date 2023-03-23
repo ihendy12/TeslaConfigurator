@@ -11,7 +11,7 @@ public interface UserInterfaceTesla {
         System.out.println();
         System.out.println("1: Build your Tesla!");
         System.out.println("2: Check out existing orders");
-        System.out.println("2: Exit");
+        System.out.println("3: Exit");
     }
 
     //Models
