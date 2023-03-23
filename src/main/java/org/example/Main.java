@@ -124,24 +124,177 @@ public class Main implements Runnable, UserInterfaceTesla {
                 //MODEL Y
                 else if (modelChoice == 2){
                     displayYTrimLevels();
+                    trimChoice = keyboard.nextInt();
+
+                    if (trimChoice == 2){
+                        displayYPerformanceWheels();
+                        wheelChoice = keyboard.nextInt();
+
+                        display3AndYExteriorColors();
+                        exteriorChoice = keyboard.nextInt();
+
+                        display3AndYInteriorColors();
+                        interiorChoice = keyboard.nextInt();
+
+                        displayYTowing();
+                        towChoice = keyboard.nextInt();
+
+                        displayYPerformanceSeats();
+                        seatsChoice = keyboard.nextInt();
+
+                        displayAutopilotTypes();
+                        autoPilotChoice = keyboard.nextInt();
+
+                        displayChargingTypes();
+                        chargingChoice = keyboard.nextInt();
+
+                    } else {
+
+                        displayYWheelTypes();
+                        wheelChoice = keyboard.nextInt();
+
+                        display3AndYExteriorColors();
+                        exteriorChoice = keyboard.nextInt();
+
+                        display3AndYInteriorColors();
+                        interiorChoice = keyboard.nextInt();
+
+                        displayYTowing();
+                        towChoice = keyboard.nextInt();
+
+                        displayYSeatChoice();
+                        seatsChoice = keyboard.nextInt();
+
+                        displayAutopilotTypes();
+                        autoPilotChoice = keyboard.nextInt();
+
+                        displayChargingTypes();
+                        chargingChoice = keyboard.nextInt();
+
+                    }
+
+                    displayTotalPricing();
+                    System.out.println("Here is your configuration");
+                    System.out.println();
+                    System.out.println(modelChoice);
+                    System.out.println(trimChoice);
+                    System.out.println(exteriorChoice);
+                    System.out.println(wheelChoice);
+                    System.out.println(interiorChoice);
+                    System.out.println(autoPilotChoice);
+                    System.out.println(chargingChoice);
+                    System.out.println(towChoice);
+                    System.out.println(seatsChoice);
+                    System.out.println();
+                    System.out.println("Total Price: ");
+
+                    endOfProgram();
+                    run = false;
+
                 }
 
 
                 //MODEL S
                 else if (modelChoice == 3){
                     displaySTrimLevels();
+                    trimChoice = keyboard.nextInt();
+
+                    displaySWheelTypes();
+                    wheelChoice = keyboard.nextInt();
+
+                    displaySAndXExteriorColors();
+                    exteriorChoice = keyboard.nextInt();
+
+                    displaySAndXInteriorColors();
+                    interiorChoice = keyboard.nextInt();
+
+                    display3AndSTow();
+                    towChoice = keyboard.nextInt();
+
+                    displayNumberOfSeats3AndS();
+                    seatsChoice = keyboard.nextInt();
+
+                    displayAutopilotTypes();
+                    autoPilotChoice = keyboard.nextInt();
+
+                    displayChargingTypes();
+                    chargingChoice = keyboard.nextInt();
+
+                    displayTotalPricing();
+                    System.out.println("Here is your configuration");
+                    System.out.println();
+                    System.out.println(modelChoice);
+                    System.out.println(trimChoice);
+                    System.out.println(exteriorChoice);
+                    System.out.println(wheelChoice);
+                    System.out.println(interiorChoice);
+                    System.out.println(autoPilotChoice);
+                    System.out.println(chargingChoice);
+                    System.out.println(towChoice);
+                    System.out.println(seatsChoice);
+                    System.out.println();
+                    System.out.println("Total Price: ");
+
+                    endOfProgram();
+                    run = false;
+
                 }
 
 
                 //MODEL X
                 else if(modelChoice == 4){
                     displayXTrimLevels();
+                    trimChoice = keyboard.nextInt();
+
+                    displayXWheelTypes();
+                    wheelChoice = keyboard.nextInt();
+
+                    displaySAndXExteriorColors();
+                    exteriorChoice = keyboard.nextInt();
+
+                    displaySAndXInteriorColors();
+                    interiorChoice = keyboard.nextInt();
+
+                    displayXTowPackage();
+                    towChoice = keyboard.nextInt();
+
+                    displayXSeats();
+                    seatsChoice = keyboard.nextInt();
+
+                    displayAutopilotTypes();
+                    autoPilotChoice = keyboard.nextInt();
+
+                    displayChargingTypes();
+                    chargingChoice = keyboard.nextInt();
+
+                    displayTotalPricing();
+                    System.out.println("Here is your configuration");
+                    System.out.println();
+                    System.out.println(modelChoice);
+                    System.out.println(trimChoice);
+                    System.out.println(exteriorChoice);
+                    System.out.println(wheelChoice);
+                    System.out.println(interiorChoice);
+                    System.out.println(autoPilotChoice);
+                    System.out.println(chargingChoice);
+                    System.out.println(towChoice);
+                    System.out.println(seatsChoice);
+                    System.out.println();
+                    System.out.println("Total Price: ");
+
+                    endOfProgram();
+                    run = false;
                 }
 
 
             }
+            // RETURNS EXISTING ORDERS
+            else if (mainMenuChoice == 2){
+                System.out.println("Currently working on this section, come back later!");
+
+            }
             //ENDS PROGRAM
-            else if (mainMenuChoice == 2) {
+            else if (mainMenuChoice == 3) {
                 run = false;
                 endOfProgram();
             }
