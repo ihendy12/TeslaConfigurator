@@ -119,7 +119,7 @@ public interface UserInterfaceTesla {
     default void displayYPerformanceWheels(){
         System.out.println("The Performance Model Y comes with only 1 option for wheels.");
         System.out.println();
-        System.out.println("1: 21\" Uberturbine      ------    $0.00");
+        System.out.println("1: 21\" Uberturbine Wheels     ------    $0.00");
     }
 
     default void displayYTowing(){
