@@ -55,14 +55,14 @@ create table charging (
 
 create table tow_hitch (
 	tow_hitch_id serial,
-	has_tow boolean not null,
+	tow_confirmed varchar(40) not null,
 	tow_hitch_price numeric (9,2),
 	constraint pk_tow_hitch_id primary key (tow_hitch_id)
 );
 
 create table seat_number (
 	seat_id serial,
-	number_of_seats int not null,
+	number_of_seats varchar(40) not null,
 	seat_price numeric (9,2),
 	constraint pk_seat_id primary key (seat_id)
 );
@@ -107,9 +107,9 @@ select * from seat_number;
 
 
 INSERT INTO model (model_name, model_price) VALUES ('Model 3', 42990.00);
-INSERT INTO model (model_name, model_price) VALUES ('Model Y', 42990.00);
-INSERT INTO model (model_name, model_price) VALUES ('Model S', 42990.00);
-INSERT INTO model (model_name, model_price) VALUES ('Model X', 42990.00);
+INSERT INTO model (model_name, model_price) VALUES ('Model Y', 54990.00);
+INSERT INTO model (model_name, model_price) VALUES ('Model S', 89990.00);
+INSERT INTO model (model_name, model_price) VALUES ('Model X', 99990.00);
 
 INSERT INTO trim_level (trim_level_name, trim_price) VALUES ('3 Rear Wheel Drive', 0.00);
 INSERT INTO trim_level (trim_level_name, trim_price) VALUES ('3 Long Range', 8000.00);
@@ -143,8 +143,27 @@ INSERT INTO exterior_color (exterior_color_name, exterior_price) VALUES ('S&X De
 INSERT INTO exterior_color (exterior_color_name, exterior_price) VALUES ('S&X Solid Black', 1500.00);
 INSERT INTO exterior_color (exterior_color_name, exterior_price) VALUES ('S&X Ultra Red', 3000.00);
 
+INSERT INTO interior_color (interior_color_name, interior_price) VALUES ('S&X Black', 0.00);
+INSERT INTO interior_color (interior_color_name, interior_price) VALUES ('S&X White', 2000.00);
+INSERT INTO interior_color (interior_color_name, interior_price) VALUES ('S&X Cream', 2000.00);
+INSERT INTO interior_color (interior_color_name, interior_price) VALUES ('3&Y Black', 0.00);
+INSERT INTO interior_color (interior_color_name, interior_price) VALUES ('3&Y White', 1000.00);
 
+INSERT INTO autopilot_level (autopilot_level_name, autopilot_price) VALUES ('Autopilot', 0.00);
+INSERT INTO autopilot_level (autopilot_level_name, autopilot_price) VALUES ('Enhanced Autopilot', 6000.00);
+INSERT INTO autopilot_level (autopilot_level_name, autopilot_price) VALUES ('Full-Self Driving', 15000.00);
 
+INSERT INTO charging (charging_type, charging_price) VALUES ('None', 0.00);
+INSERT INTO charging (charging_type, charging_price) VALUES ('Mobile Bundle', 230.00);
+INSERT INTO charging (charging_type, charging_price) VALUES ('Wall Connector', 425.00);
+
+INSERT INTO seat_number (number_of_seats, seat_price) VALUES ('5 Seats', 0.00);
+INSERT INTO seat_number (number_of_seats, seat_price) VALUES ('6 Seats', 6500.00);
+INSERT INTO seat_number (number_of_seats, seat_price) VALUES ('X 7 Seats', 3500.00);
+INSERT INTO seat_number (number_of_seats, seat_price) VALUES ('Y 7 Seats', 4000.00);
+
+INSERT INTO tow_hitch (tow_confirmed, tow_hitch_price) VALUES ('Y Tow Hitch', 1000.00);
+INSERT INTO tow_hitch (tow_confirmed, tow_hitch_price) VALUES ('X Tow Hitch', 0.00);
 
 --commit;
 
