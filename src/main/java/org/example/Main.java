@@ -1,9 +1,21 @@
 package org.example;
-
+import org.postgresql.ds.PGSimpleDataSource;
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.postgresql.Driver;
+import org.postgresql.ds.PGConnectionPoolDataSource;
+import org.postgresql.xa.PGXADataSource;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+
+
 public class Main implements Runnable, UserInterfaceTesla {
+
+
+
     private Scanner keyboard = new Scanner(System.in);
     int modelChoice = 0;
     int trimChoice = 0;
@@ -16,11 +28,27 @@ public class Main implements Runnable, UserInterfaceTesla {
     int chargingChoice = 0;
 
 
+    private final String url =  "jdbc:postgresql://user@localhost:5432/TeslaConfigurator";;
+    private final String user = "postgres";
+    private final String pass = "postgres1";
+
+    public Connection connect() {
+        Connection conn = null;
+        try {
+            conn = DriverManager.getConnection(url, user, pass);
+            System.out.println("Connected to the PostgreSQL server successfully.");
+        } catch (SQLException e) {
+            System.out.println(e.getMessage() + e.getSQLState());
+        }
+
+        return conn;
+    }
 
 
     public static void main(String[] args) {
 
         Main main = new Main();
+        main.connect();
         main.run();
 
     }
