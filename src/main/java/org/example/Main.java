@@ -28,9 +28,9 @@ public class Main implements Runnable, UserInterfaceTesla {
     int chargingChoice = 0;
 
 
-    private final String url =  "jdbc:postgresql://user@localhost:5432/TeslaConfigurator";;
+    private final String url =  "jdbc:postgresql://localhost:5432/TeslaConfigurator";
     private final String user = "postgres";
-    private final String pass = "postgres1";
+    private final String pass = "Fall2022!";
 
     public Connection connect() {
         Connection conn = null;
