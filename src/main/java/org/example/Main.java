@@ -1,9 +1,8 @@
 package org.example;
-import org.postgresql.ds.PGSimpleDataSource;
+import org.example.Dao.JdbcModelDao;
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.postgresql.Driver;
-import org.postgresql.ds.PGConnectionPoolDataSource;
-import org.postgresql.xa.PGXADataSource;
+import org.example.Dao.ModelDao;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -11,9 +10,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
-
 public class Main implements Runnable, UserInterfaceTesla {
-
 
 
     private Scanner keyboard = new Scanner(System.in);
@@ -27,10 +24,9 @@ public class Main implements Runnable, UserInterfaceTesla {
     int autoPilotChoice = 0;
     int chargingChoice = 0;
 
-
-    private final String url =  "jdbc:postgresql://localhost:5432/TeslaConfigurator";
-    private final String user = "postgres";
-    private final String pass = "Fall2022!";
+    final String url =  "jdbc:postgresql://localhost:5432/TeslaConfigurator";
+    final String user = "postgres";
+    final String pass = "Fall2022!";
 
     public Connection connect() {
         Connection conn = null;
@@ -40,22 +36,31 @@ public class Main implements Runnable, UserInterfaceTesla {
         } catch (SQLException e) {
             System.out.println(e.getMessage() + e.getSQLState());
         }
-
         return conn;
     }
 
 
-    public static void main(String[] args) {
 
+
+    public static void main(String[] args) {
         Main main = new Main();
         main.connect();
         main.run();
+
 
     }
 
     @Override
     public void run() {
         boolean run = true;
+        boolean endRequested =  false;
+
+        BasicDataSource dataSource = new BasicDataSource();
+        dataSource.setUrl("jdbc:postgresql://localhost:5432/TeslaConfigurator");
+        dataSource.setUsername("postgres");
+        dataSource.setPassword("Fall2022!");
+        ModelDao model = new JdbcModelDao(dataSource);
+
         //MAIN MENU
 
         while(run) {
@@ -127,7 +132,7 @@ public class Main implements Runnable, UserInterfaceTesla {
                     displayTotalPricing();
                     System.out.println("Here is your configuration");
                     System.out.println();
-                    System.out.println(modelChoice);
+                    System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
                     System.out.println(trimChoice);
                     System.out.println(exteriorChoice);
                     System.out.println(wheelChoice);
@@ -299,7 +304,7 @@ public class Main implements Runnable, UserInterfaceTesla {
                     displayTotalPricing();
                     System.out.println("Here is your configuration");
                     System.out.println();
-                    System.out.println(modelChoice);
+                    System.out.println(model.getModel(modelChoice));
                     System.out.println(trimChoice);
                     System.out.println(exteriorChoice);
                     System.out.println(wheelChoice);
