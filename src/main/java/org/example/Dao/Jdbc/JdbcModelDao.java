@@ -1,4 +1,5 @@
-package org.example.Dao;
+package org.example.Dao.Jdbc;
+import org.example.Dao.ModelDao;
 import org.example.models.Model;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;

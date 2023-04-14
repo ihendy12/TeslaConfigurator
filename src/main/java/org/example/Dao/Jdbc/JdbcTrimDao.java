@@ -1,5 +1,6 @@
-package org.example.Dao;
+package org.example.Dao.Jdbc;
 
+import org.example.Dao.TrimDao;
 import org.example.models.Model;
 import org.example.models.Trim;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -9,7 +10,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import javax.sql.DataSource;
 import java.util.List;
 
-public class JdbcTrimDao implements TrimDao{
+public class JdbcTrimDao implements TrimDao {
 
 
     private final JdbcTemplate jdbcTemplate;

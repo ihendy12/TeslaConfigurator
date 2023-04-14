@@ -1,6 +1,7 @@
 package org.example.ControllersAndView;
 import org.example.Dao.*;
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.example.Dao.Jdbc.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -61,6 +62,8 @@ public class Main implements Runnable, UserInterfaceTesla {
         ModelDao model = new JdbcModelDao(dataSource);
         TrimDao trim = new JdbcTrimDao(dataSource);
         ExteriorDao exterior = new JdbcExteriorDao(dataSource);
+        WheelDao wheel = new JdbcWheelDao(dataSource);
+        InteriorDao interior = new JdbcInteriorDao(dataSource);
 
         //MAIN MENU
 
@@ -136,8 +139,8 @@ public class Main implements Runnable, UserInterfaceTesla {
                     System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
                     System.out.println(trim.getTrim(trimChoice).getTrimName() + "  " + trim.getTrim(trimChoice).getTrimPrice());
                     System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(trimChoice).getExteriorPrice());
-                    System.out.println(wheelChoice);
-                    System.out.println(interiorChoice);
+                    System.out.println(wheel.getWheel(wheelChoice).getWheelName() + "  " + wheel.getWheel(wheelChoice).getWheelPrice());
+                    System.out.println(interior.getInterior(interiorChoice).getInteriorName() + "  " + interior.getInterior(interiorChoice).getInteriorPrice());
                     System.out.println(autoPilotChoice);
                     System.out.println(chargingChoice);
                     System.out.println(towChoice);

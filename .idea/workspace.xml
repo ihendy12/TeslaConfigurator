@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89a02d96-c6e3-40f3-87f0-e6e506df8c2a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/ExteriorDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/JdbcExteriorDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/JdbcTrimDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/TrimDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/InteriorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcInteriorDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcWheelDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/WheelDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/JdbcModelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/JdbcModelDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/UserInterfaceTesla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/UserInterfaceTesla.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Exterior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Exterior.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Trim.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Trim.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/JdbcExteriorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcExteriorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/JdbcModelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcModelDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/JdbcTrimDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcTrimDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Interior.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Interior.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/models/Wheel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/models/Wheel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
