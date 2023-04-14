@@ -5,7 +5,7 @@ import org.example.models.Model;
 import java.util.List;
 
 public class adminView {
-    private final BasicConsole console;
+  /*  private final BasicConsole console;
 
     // Constructor expect a console object to print to.
     public adminView(BasicConsole console) {
@@ -44,5 +44,5 @@ public class adminView {
         model.getModelId();
         console.pauseOutput();
     }
-
+*/
 }

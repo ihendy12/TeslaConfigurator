@@ -10,7 +10,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 
-public class Main implements Runnable, UserInterfaceTesla {
+public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
 
     private Scanner keyboard = new Scanner(System.in);
@@ -48,6 +48,9 @@ public class Main implements Runnable, UserInterfaceTesla {
         main.run();
 
 
+
+
+
     }
 
     @Override
@@ -64,6 +67,10 @@ public class Main implements Runnable, UserInterfaceTesla {
         ExteriorDao exterior = new JdbcExteriorDao(dataSource);
         WheelDao wheel = new JdbcWheelDao(dataSource);
         InteriorDao interior = new JdbcInteriorDao(dataSource);
+        AutopilotDao autopilot = new JdbcAutopilotDao(dataSource);
+        ChargingDao charging = new JdbcChargingDao(dataSource);
+        SeatDao seat = new JdbcSeatDao(dataSource);
+        TowDao tow = new JdbcTowDao(dataSource);
 
         //MAIN MENU
 
@@ -134,6 +141,15 @@ public class Main implements Runnable, UserInterfaceTesla {
                     }
 
                     displayTotalPricing();
+                    double total =  (tow.getTow(towChoice).getTowPrice() +
+                                                model.getModel(modelChoice).getPrice() +
+                                                trim.getTrim(trimChoice).getTrimPrice() +
+                                                exterior.getExterior(trimChoice).getExteriorPrice() +
+                                                wheel.getWheel(wheelChoice).getWheelPrice() +
+                                                interior.getInterior(interiorChoice).getInteriorPrice() +
+                                                autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice() +
+                                                charging.getCharging(chargingChoice).getChargingPrice());
+
                     System.out.println("Here is your configuration");
                     System.out.println();
                     System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
@@ -141,12 +157,12 @@ public class Main implements Runnable, UserInterfaceTesla {
                     System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(trimChoice).getExteriorPrice());
                     System.out.println(wheel.getWheel(wheelChoice).getWheelName() + "  " + wheel.getWheel(wheelChoice).getWheelPrice());
                     System.out.println(interior.getInterior(interiorChoice).getInteriorName() + "  " + interior.getInterior(interiorChoice).getInteriorPrice());
-                    System.out.println(autoPilotChoice);
-                    System.out.println(chargingChoice);
-                    System.out.println(towChoice);
-                    System.out.println(seatsChoice);
+                    System.out.println(autopilot.getAutopilot(autoPilotChoice).getAutopilotName() + "  " + autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice());
+                    System.out.println(charging.getCharging(chargingChoice).getChargingName() + "  " + charging.getCharging(chargingChoice).getChargingPrice());
+                    System.out.println(tow.getTow(towChoice).getTowConfirmed() + "  " + tow.getTow(towChoice).getTowPrice());
+                    System.out.println(seat.getSeat(seatsChoice).getNumOfSeats() + "  " + seat.getSeat(seatsChoice).getSeatPrice());
                     System.out.println();
-                    System.out.println("Total Price: ");
+                    System.out.println("Total Price: " + total);
 
                     endOfProgram();
                     run = false;
@@ -212,19 +228,28 @@ public class Main implements Runnable, UserInterfaceTesla {
                     }
 
                     displayTotalPricing();
+                    double total =  (tow.getTow(towChoice).getTowPrice() +
+                            model.getModel(modelChoice).getPrice() +
+                            trim.getTrim(trimChoice).getTrimPrice() +
+                            exterior.getExterior(trimChoice).getExteriorPrice() +
+                            wheel.getWheel(wheelChoice).getWheelPrice() +
+                            interior.getInterior(interiorChoice).getInteriorPrice() +
+                            autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice() +
+                            charging.getCharging(chargingChoice).getChargingPrice());
+
                     System.out.println("Here is your configuration");
                     System.out.println();
-                    System.out.println(modelChoice);
-                    System.out.println(trimChoice);
-                    System.out.println(exteriorChoice);
-                    System.out.println(wheelChoice);
-                    System.out.println(interiorChoice);
-                    System.out.println(autoPilotChoice);
-                    System.out.println(chargingChoice);
-                    System.out.println(towChoice);
-                    System.out.println(seatsChoice);
+                    System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
+                    System.out.println(trim.getTrim(trimChoice).getTrimName() + "  " + trim.getTrim(trimChoice).getTrimPrice());
+                    System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(trimChoice).getExteriorPrice());
+                    System.out.println(wheel.getWheel(wheelChoice).getWheelName() + "  " + wheel.getWheel(wheelChoice).getWheelPrice());
+                    System.out.println(interior.getInterior(interiorChoice).getInteriorName() + "  " + interior.getInterior(interiorChoice).getInteriorPrice());
+                    System.out.println(autopilot.getAutopilot(autoPilotChoice).getAutopilotName() + "  " + autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice());
+                    System.out.println(charging.getCharging(chargingChoice).getChargingName() + "  " + charging.getCharging(chargingChoice).getChargingPrice());
+                    System.out.println(tow.getTow(towChoice).getTowConfirmed() + "  " + tow.getTow(towChoice).getTowPrice());
+                    System.out.println(seat.getSeat(seatsChoice).getNumOfSeats() + "  " + seat.getSeat(seatsChoice).getSeatPrice());
                     System.out.println();
-                    System.out.println("Total Price: ");
+                    System.out.println("Total Price: " + total);
 
                     endOfProgram();
                     run = false;
@@ -259,20 +284,28 @@ public class Main implements Runnable, UserInterfaceTesla {
                     chargingChoice = keyboard.nextInt();
 
                     displayTotalPricing();
+                    double total =  (tow.getTow(towChoice).getTowPrice() +
+                            model.getModel(modelChoice).getPrice() +
+                            trim.getTrim(trimChoice).getTrimPrice() +
+                            exterior.getExterior(trimChoice).getExteriorPrice() +
+                            wheel.getWheel(wheelChoice).getWheelPrice() +
+                            interior.getInterior(interiorChoice).getInteriorPrice() +
+                            autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice() +
+                            charging.getCharging(chargingChoice).getChargingPrice());
+
                     System.out.println("Here is your configuration");
                     System.out.println();
-                    System.out.println(modelChoice);
-                    System.out.println(trimChoice);
-                    System.out.println(exteriorChoice);
-                    System.out.println(wheelChoice);
-                    System.out.println(interiorChoice);
-                    System.out.println(autoPilotChoice);
-                    System.out.println(chargingChoice);
-                    System.out.println(towChoice);
-                    System.out.println(seatsChoice);
+                    System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
+                    System.out.println(trim.getTrim(trimChoice).getTrimName() + "  " + trim.getTrim(trimChoice).getTrimPrice());
+                    System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(trimChoice).getExteriorPrice());
+                    System.out.println(wheel.getWheel(wheelChoice).getWheelName() + "  " + wheel.getWheel(wheelChoice).getWheelPrice());
+                    System.out.println(interior.getInterior(interiorChoice).getInteriorName() + "  " + interior.getInterior(interiorChoice).getInteriorPrice());
+                    System.out.println(autopilot.getAutopilot(autoPilotChoice).getAutopilotName() + "  " + autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice());
+                    System.out.println(charging.getCharging(chargingChoice).getChargingName() + "  " + charging.getCharging(chargingChoice).getChargingPrice());
+                    System.out.println(tow.getTow(towChoice).getTowConfirmed() + "  " + tow.getTow(towChoice).getTowPrice());
+                    System.out.println(seat.getSeat(seatsChoice).getNumOfSeats() + "  " + seat.getSeat(seatsChoice).getSeatPrice());
                     System.out.println();
-                    System.out.println("Total Price: ");
-
+                    System.out.println("Total Price: " + total);
                     endOfProgram();
                     run = false;
 
@@ -306,19 +339,28 @@ public class Main implements Runnable, UserInterfaceTesla {
                     chargingChoice = keyboard.nextInt();
 
                     displayTotalPricing();
+                    double total =  (tow.getTow(towChoice).getTowPrice() +
+                            model.getModel(modelChoice).getPrice() +
+                            trim.getTrim(trimChoice).getTrimPrice() +
+                            exterior.getExterior(trimChoice).getExteriorPrice() +
+                            wheel.getWheel(wheelChoice).getWheelPrice() +
+                            interior.getInterior(interiorChoice).getInteriorPrice() +
+                            autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice() +
+                            charging.getCharging(chargingChoice).getChargingPrice());
+
                     System.out.println("Here is your configuration");
                     System.out.println();
-                    System.out.println(model.getModel(modelChoice));
-                    System.out.println(trimChoice);
-                    System.out.println(exteriorChoice);
-                    System.out.println(wheelChoice);
-                    System.out.println(interiorChoice);
-                    System.out.println(autoPilotChoice);
-                    System.out.println(chargingChoice);
-                    System.out.println(towChoice);
-                    System.out.println(seatsChoice);
+                    System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
+                    System.out.println(trim.getTrim(trimChoice).getTrimName() + "  " + trim.getTrim(trimChoice).getTrimPrice());
+                    System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(trimChoice).getExteriorPrice());
+                    System.out.println(wheel.getWheel(wheelChoice).getWheelName() + "  " + wheel.getWheel(wheelChoice).getWheelPrice());
+                    System.out.println(interior.getInterior(interiorChoice).getInteriorName() + "  " + interior.getInterior(interiorChoice).getInteriorPrice());
+                    System.out.println(autopilot.getAutopilot(autoPilotChoice).getAutopilotName() + "  " + autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice());
+                    System.out.println(charging.getCharging(chargingChoice).getChargingName() + "  " + charging.getCharging(chargingChoice).getChargingPrice());
+                    System.out.println(tow.getTow(towChoice).getTowConfirmed() + "  " + tow.getTow(towChoice).getTowPrice());
+                    System.out.println(seat.getSeat(seatsChoice).getNumOfSeats() + "  " + seat.getSeat(seatsChoice).getSeatPrice());
                     System.out.println();
-                    System.out.println("Total Price: ");
+                    System.out.println("Total Price: " + total);
 
                     endOfProgram();
                     run = false;

@@ -6,7 +6,7 @@ import org.example.models.Model;
 import java.util.List;
 
 public class adminController {
-
+/*
     // The view manages all the user interaction, inputs and outputs.
     private final adminView view;
 
@@ -37,5 +37,5 @@ public class adminController {
         // Show details to the user
         view.printModelDetails(model);
     }
-
+*/
 }
