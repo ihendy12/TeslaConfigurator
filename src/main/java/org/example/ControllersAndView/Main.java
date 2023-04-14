@@ -1,7 +1,6 @@
-package org.example;
-import org.example.Dao.JdbcModelDao;
+package org.example.ControllersAndView;
+import org.example.Dao.*;
 import org.apache.commons.dbcp2.BasicDataSource;
-import org.example.Dao.ModelDao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -60,6 +59,8 @@ public class Main implements Runnable, UserInterfaceTesla {
         dataSource.setUsername("postgres");
         dataSource.setPassword("Fall2022!");
         ModelDao model = new JdbcModelDao(dataSource);
+        TrimDao trim = new JdbcTrimDao(dataSource);
+        ExteriorDao exterior = new JdbcExteriorDao(dataSource);
 
         //MAIN MENU
 
@@ -133,8 +134,8 @@ public class Main implements Runnable, UserInterfaceTesla {
                     System.out.println("Here is your configuration");
                     System.out.println();
                     System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
-                    System.out.println(trimChoice);
-                    System.out.println(exteriorChoice);
+                    System.out.println(trim.getTrim(trimChoice).getTrimName() + "  " + trim.getTrim(trimChoice).getTrimPrice());
+                    System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(trimChoice).getExteriorPrice());
                     System.out.println(wheelChoice);
                     System.out.println(interiorChoice);
                     System.out.println(autoPilotChoice);

@@ -6,7 +6,7 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import javax.sql.DataSource;
 import java.util.List;
 
-public class JdbcModelDao extends Model implements ModelDao {
+public class JdbcModelDao implements ModelDao {
 
     private final JdbcTemplate jdbcTemplate;
     public JdbcModelDao(DataSource dataSource) {
