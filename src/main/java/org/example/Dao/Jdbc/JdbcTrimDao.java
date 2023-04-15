@@ -32,8 +32,16 @@ public class JdbcTrimDao implements TrimDao {
     }
 
     @Override
-    public List<Trim> getAllTrims() {
-        return null;
+    public Trim getTrimName(String trimName){
+        Trim trim = null;
+        String sql = "SELECT * " +
+                     "FROM trim_level " +
+                     "WHERE trim_level_name = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, trimName);
+        if(results.next()){
+            trim = mapRowToTrim(results);
+        }
+        return trim;
     }
 
     @Override

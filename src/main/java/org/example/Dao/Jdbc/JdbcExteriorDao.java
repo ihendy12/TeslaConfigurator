@@ -2,6 +2,7 @@ package org.example.Dao.Jdbc;
 
 import org.example.Dao.ExteriorDao;
 import org.example.models.Exterior;
+import org.example.models.Trim;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
@@ -27,6 +28,18 @@ public class JdbcExteriorDao implements ExteriorDao {
             exterior = mapRowToExterior(results);
         }
 
+        return exterior;
+    }
+    @Override
+    public Exterior getExteriorName(String exteriorName){
+        Exterior exterior = null;
+        String sql = "SELECT * " +
+                "FROM exterior_color " +
+                "WHERE exterior_color_name = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, exteriorName);
+        if(results.next()){
+            exterior = mapRowToExterior(results);
+        }
         return exterior;
     }
 

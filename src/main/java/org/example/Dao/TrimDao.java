@@ -9,7 +9,7 @@ public interface TrimDao{
 
     Trim getTrim(int trimId);
 
-    List<Trim> getAllTrims();
+    Trim getTrimName(String trimName);
 
     Trim createTrim(Trim newTrim);
 }

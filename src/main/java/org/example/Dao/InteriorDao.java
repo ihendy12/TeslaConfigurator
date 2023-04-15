@@ -12,3 +12,5 @@ public interface InteriorDao {
 
     Interior createInterior(Interior newInterior);
 }
+
+

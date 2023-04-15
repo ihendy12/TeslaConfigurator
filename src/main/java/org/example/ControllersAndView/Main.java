@@ -94,13 +94,23 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
                     //If Performance, this way since they have some features provided that are options elsewhere
                     if (trimChoice == 3){
-
+                        trimChoice = trim.getTrimName("3 Performance").getTrimId();
                         display3PerformanceWheelType();
                         wheelChoice = keyboard.nextInt();
 
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
-
+                        if (exteriorChoice == 1) {
+                            exteriorChoice = exterior.getExteriorName("3&Y Pearl White").getExteriorId();
+                        } else if (exteriorChoice == 2) {
+                            exteriorChoice = exterior.getExteriorName("3&Y Midnight Silver").getExteriorId();
+                        } else if (exteriorChoice == 3){
+                            exteriorChoice = exterior.getExteriorName("3&Y Deep Blue Metallic").getExteriorId();
+                        } else if (exteriorChoice == 4){
+                            exteriorChoice = exterior.getExteriorName("3&Y Solid Black").getExteriorId();
+                        } else if (exteriorChoice == 5){
+                            exteriorChoice = exterior.getExteriorName("3&Y Red Multi-Coat").getExteriorId();
+                        }
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
 
@@ -117,12 +127,27 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         chargingChoice =keyboard.nextInt();
 
                     } else {
+                        if (trimChoice == 1) {
+                            trimChoice = trim.getTrimName("3 Rear Wheel Drive").getTrimId();
+                        } else if (trimChoice == 2) {
+                            trimChoice = trim.getTrimName("3 Long Range").getTrimId();
+                        }
                         display3WheelTypes();
                         wheelChoice = keyboard.nextInt();
 
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
-
+                        if (exteriorChoice == 1) {
+                            exteriorChoice = exterior.getExteriorName("3&Y Pearl White").getExteriorId();
+                        } else if (exteriorChoice == 2) {
+                            exteriorChoice = exterior.getExteriorName("3&Y Midnight Silver").getExteriorId();
+                        } else if (exteriorChoice == 3){
+                            exteriorChoice = exterior.getExteriorName("3&Y Deep Blue Metallic").getExteriorId();
+                        } else if (exteriorChoice == 4){
+                            exteriorChoice = exterior.getExteriorName("3&Y Solid Black").getExteriorId();
+                        } else if (exteriorChoice == 5){
+                            exteriorChoice = exterior.getExteriorName("3&Y Red Multi-Coat").getExteriorId();
+                        }
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
 
@@ -139,6 +164,8 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         chargingChoice =keyboard.nextInt();
 
                     }
+
+
 
                     displayTotalPricing();
                     double total =  (tow.getTow(towChoice).getTowPrice() +
@@ -181,12 +208,24 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     trimChoice = keyboard.nextInt();
 
                     if (trimChoice == 2){
+                        trimChoice = trim.getTrimName("Y Performance").getTrimId();
+
                         displayYPerformanceWheels();
                         wheelChoice = keyboard.nextInt();
 
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
-
+                        if (exteriorChoice == 1) {
+                            exteriorChoice = exterior.getExteriorName("3&Y Pearl White").getExteriorId();
+                        } else if (exteriorChoice == 2) {
+                            exteriorChoice = exterior.getExteriorName("3&Y Midnight Silver").getExteriorId();
+                        } else if (exteriorChoice == 3){
+                            exteriorChoice = exterior.getExteriorName("3&Y Deep Blue Metallic").getExteriorId();
+                        } else if (exteriorChoice == 4){
+                            exteriorChoice = exterior.getExteriorName("3&Y Solid Black").getExteriorId();
+                        } else if (exteriorChoice == 5){
+                            exteriorChoice = exterior.getExteriorName("3&Y Red Multi-Coat").getExteriorId();
+                        }
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
 
@@ -203,13 +242,23 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         chargingChoice = keyboard.nextInt();
 
                     } else {
-
+                        trimChoice = trim.getTrimName("Y Long Range").getTrimId();
                         displayYWheelTypes();
                         wheelChoice = keyboard.nextInt();
 
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
-
+                        if (exteriorChoice == 1) {
+                            exteriorChoice = exterior.getExteriorName("3&Y Pearl White").getExteriorId();
+                        } else if (exteriorChoice == 2) {
+                            exteriorChoice = exterior.getExteriorName("3&Y Midnight Silver").getExteriorId();
+                        } else if (exteriorChoice == 3){
+                            exteriorChoice = exterior.getExteriorName("3&Y Deep Blue Metallic").getExteriorId();
+                        } else if (exteriorChoice == 4){
+                            exteriorChoice = exterior.getExteriorName("3&Y Solid Black").getExteriorId();
+                        } else if (exteriorChoice == 5){
+                            exteriorChoice = exterior.getExteriorName("3&Y Red Multi-Coat").getExteriorId();
+                        }
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
 
@@ -241,7 +290,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println();
                     System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
                     System.out.println(trim.getTrim(trimChoice).getTrimName() + "  " + trim.getTrim(trimChoice).getTrimPrice());
-                    System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(trimChoice).getExteriorPrice());
+                    System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(exteriorChoice).getExteriorPrice());
                     System.out.println(wheel.getWheel(wheelChoice).getWheelName() + "  " + wheel.getWheel(wheelChoice).getWheelPrice());
                     System.out.println(interior.getInterior(interiorChoice).getInteriorName() + "  " + interior.getInterior(interiorChoice).getInteriorPrice());
                     System.out.println(autopilot.getAutopilot(autoPilotChoice).getAutopilotName() + "  " + autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice());
@@ -261,6 +310,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                 else if (modelChoice == 3){
                     displaySTrimLevels();
                     trimChoice = keyboard.nextInt();
+                    if (trimChoice == 1) {
+                        trimChoice = trim.getTrimName("S Regular").getTrimId();
+                    } else if (trimChoice == 2) {
+                        trimChoice = trim.getTrimName("S Plaid").getTrimId();
+                    }
 
                     displaySWheelTypes();
                     wheelChoice = keyboard.nextInt();
@@ -316,7 +370,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                 else if(modelChoice == 4){
                     displayXTrimLevels();
                     trimChoice = keyboard.nextInt();
-
+                    if (trimChoice == 1) {
+                        trimChoice = trim.getTrimName("X Regular").getTrimId();
+                    } else if (trimChoice == 2) {
+                        trimChoice = trim.getTrimName("X Plaid").getTrimId();
+                    }
                     displayXWheelTypes();
                     wheelChoice = keyboard.nextInt();
 

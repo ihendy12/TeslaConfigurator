@@ -9,6 +9,8 @@ public interface ExteriorDao {
 
     Exterior getExterior(int exteriorId);
 
+    Exterior getExteriorName(String exteriorName);
+
     List<Exterior> getAllExteriors();
 
     Exterior createExterior(Exterior newExterior);
