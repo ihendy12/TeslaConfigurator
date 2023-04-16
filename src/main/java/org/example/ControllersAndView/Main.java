@@ -113,7 +113,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
-
+                        if (interiorChoice == 1){
+                            interiorChoice = interior.getInteriorName("3&Y Black").getInteriorId();
+                        } else if (interiorChoice == 2){
+                            interiorChoice = interior.getInteriorName("3&Y White").getInteriorId();
+                        }
                         display3AndSTow();
                         towChoice = keyboard.nextInt();
 
@@ -150,7 +154,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
-
+                        if (interiorChoice == 1){
+                            interiorChoice = interior.getInteriorName("3&Y Black").getInteriorId();
+                        } else if (interiorChoice == 2){
+                            interiorChoice = interior.getInteriorName("3&Y White").getInteriorId();
+                        }
                         display3AndSTow();
                         towChoice = keyboard.nextInt();
 
@@ -228,7 +236,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
-
+                        if (interiorChoice == 1){
+                            interiorChoice = interior.getInteriorName("3&Y Black").getInteriorId();
+                        } else if (interiorChoice == 2){
+                            interiorChoice = interior.getInteriorName("3&Y White").getInteriorId();
+                        }
                         displayYTowing();
                         towChoice = keyboard.nextInt();
 
@@ -261,7 +273,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
-
+                        if (interiorChoice == 1){
+                            interiorChoice = interior.getInteriorName("3&Y Black").getInteriorId();
+                        } else if (interiorChoice == 2){
+                            interiorChoice = interior.getInteriorName("3&Y White").getInteriorId();
+                        }
                         displayYTowing();
                         towChoice = keyboard.nextInt();
 
@@ -321,10 +337,26 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
                     displaySAndXExteriorColors();
                     exteriorChoice = keyboard.nextInt();
-
+                    if (exteriorChoice == 1) {
+                        exteriorChoice = exterior.getExteriorName("S&X Pearl White").getExteriorId();
+                    } else if (exteriorChoice == 2) {
+                        exteriorChoice = exterior.getExteriorName("S&X Midnight Silver").getExteriorId();
+                    } else if (exteriorChoice == 3){
+                        exteriorChoice = exterior.getExteriorName("S&X Deep Blue Metallic").getExteriorId();
+                    } else if (exteriorChoice == 4){
+                        exteriorChoice = exterior.getExteriorName("S&X Solid Black").getExteriorId();
+                    } else if (exteriorChoice == 5){
+                        exteriorChoice = exterior.getExteriorName("S&X Ultra Red").getExteriorId();
+                    }
                     displaySAndXInteriorColors();
                     interiorChoice = keyboard.nextInt();
-
+                    if (interiorChoice == 1){
+                        interiorChoice = interior.getInteriorName("S&X Black").getInteriorId();
+                    } else if (interiorChoice == 2){
+                        interiorChoice = interior.getInteriorName("S&X White").getInteriorId();
+                    } else if (interiorChoice == 3){
+                        interiorChoice = interior.getInteriorName("S&X Cream").getInteriorId();
+                    }
                     display3AndSTow();
                     towChoice = keyboard.nextInt();
 
@@ -380,10 +412,26 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
                     displaySAndXExteriorColors();
                     exteriorChoice = keyboard.nextInt();
-
+                    if (exteriorChoice == 1) {
+                        exteriorChoice = exterior.getExteriorName("S&X Pearl White").getExteriorId();
+                    } else if (exteriorChoice == 2) {
+                        exteriorChoice = exterior.getExteriorName("S&X Midnight Silver").getExteriorId();
+                    } else if (exteriorChoice == 3){
+                        exteriorChoice = exterior.getExteriorName("S&X Deep Blue Metallic").getExteriorId();
+                    } else if (exteriorChoice == 4){
+                        exteriorChoice = exterior.getExteriorName("S&X Solid Black").getExteriorId();
+                    } else if (exteriorChoice == 5){
+                        exteriorChoice = exterior.getExteriorName("S&X Ultra Red").getExteriorId();
+                    }
                     displaySAndXInteriorColors();
                     interiorChoice = keyboard.nextInt();
-
+                    if (interiorChoice == 1){
+                        interiorChoice = interior.getInteriorName("S&X Black").getInteriorId();
+                    } else if (interiorChoice == 2){
+                        interiorChoice = interior.getInteriorName("S&X White").getInteriorId();
+                    } else if (interiorChoice == 3){
+                        interiorChoice = interior.getInteriorName("S&X Cream").getInteriorId();
+                    }
                     displayXTowPackage();
                     towChoice = keyboard.nextInt();
 
