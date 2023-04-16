@@ -97,7 +97,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         trimChoice = trim.getTrimName("3 Performance").getTrimId();
                         display3PerformanceWheelType();
                         wheelChoice = keyboard.nextInt();
-
+                        wheelChoice = wheel.getWheelName("20\" Uberturbine Wheels").getWheelId();
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
                         if (exteriorChoice == 1) {
@@ -120,7 +120,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         display3AndSTow();
                         towChoice = keyboard.nextInt();
-
+                            towChoice = tow.getTowName("NOT OFFERED ON THIS MODEL").getTowId();
                         displayNumberOfSeats3AndS();
                         seatsChoice = keyboard.nextInt();
 
@@ -138,7 +138,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         display3WheelTypes();
                         wheelChoice = keyboard.nextInt();
-
+                        if(wheelChoice == 1){
+                            wheelChoice = wheel.getWheelName("18\" Aero Wheels").getWheelId();
+                        } else if(wheelChoice == 2){
+                            wheelChoice = wheel.getWheelName("19\" Sport Wheels").getWheelId();
+                        }
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
                         if (exteriorChoice == 1) {
@@ -161,7 +165,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         display3AndSTow();
                         towChoice = keyboard.nextInt();
-
+                             towChoice = tow.getTowName("NOT OFFERED ON THIS MODEL").getTowId();
                         displayNumberOfSeats3AndS();
                         seatsChoice = keyboard.nextInt();
 
@@ -220,7 +224,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
                         displayYPerformanceWheels();
                         wheelChoice = keyboard.nextInt();
-
+                            wheelChoice = wheel.getWheelName("21\" Uberturbine Wheels").getWheelId();
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
                         if (exteriorChoice == 1) {
@@ -243,7 +247,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         displayYTowing();
                         towChoice = keyboard.nextInt();
-
+                            if (towChoice == 1){
+                                towChoice = tow.getTowName("NOT ADDED").getTowId();
+                            } else if (towChoice == 2){
+                                towChoice = tow.getTowName("Y Tow Hitch").getTowId();
+                            }
                         displayYPerformanceSeats();
                         seatsChoice = keyboard.nextInt();
 
@@ -257,7 +265,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         trimChoice = trim.getTrimName("Y Long Range").getTrimId();
                         displayYWheelTypes();
                         wheelChoice = keyboard.nextInt();
-
+                        if(wheelChoice == 1){
+                            wheelChoice = wheel.getWheelName("19\" Gemini Wheels").getWheelId();
+                        } else if(wheelChoice == 2){
+                            wheelChoice = wheel.getWheelName("20\" Induction Wheels").getWheelId();
+                        }
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
                         if (exteriorChoice == 1) {
@@ -280,7 +292,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         displayYTowing();
                         towChoice = keyboard.nextInt();
-
+                        if (towChoice == 1){
+                            towChoice = tow.getTowName("NOT ADDED").getTowId();
+                        } else if (towChoice == 2){
+                            towChoice = tow.getTowName("Y Tow Hitch").getTowId();
+                        }
                         displayYSeatChoice();
                         seatsChoice = keyboard.nextInt();
 
@@ -334,7 +350,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
                     displaySWheelTypes();
                     wheelChoice = keyboard.nextInt();
-
+                    if(wheelChoice == 1){
+                        wheelChoice = wheel.getWheelName("19\" Tempest Wheels").getWheelId();
+                    } else if(wheelChoice == 2){
+                        wheelChoice = wheel.getWheelName("20\" Arachnid Wheels").getWheelId();
+                    }
                     displaySAndXExteriorColors();
                     exteriorChoice = keyboard.nextInt();
                     if (exteriorChoice == 1) {
@@ -359,6 +379,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     }
                     display3AndSTow();
                     towChoice = keyboard.nextInt();
+                        towChoice = tow.getTowName("NOT OFFERED ON THIS MODEL").getTowId();
 
                     displayNumberOfSeats3AndS();
                     seatsChoice = keyboard.nextInt();
@@ -409,7 +430,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     }
                     displayXWheelTypes();
                     wheelChoice = keyboard.nextInt();
-
+                    if(wheelChoice == 1){
+                        wheelChoice = wheel.getWheelName("20\" Cyberstream Wheels").getWheelId();
+                    } else if(wheelChoice == 2){
+                        wheelChoice = wheel.getWheelName("22\" Turbine Wheels").getWheelId();
+                    }
                     displaySAndXExteriorColors();
                     exteriorChoice = keyboard.nextInt();
                     if (exteriorChoice == 1) {
@@ -434,7 +459,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     }
                     displayXTowPackage();
                     towChoice = keyboard.nextInt();
-
+                        towChoice = tow.getTowName("X Tow Hitch").getTowId();
                     displayXSeats();
                     seatsChoice = keyboard.nextInt();
 
