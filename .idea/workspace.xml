@@ -7,11 +7,18 @@
     <list default="true" id="89a02d96-c6e3-40f3-87f0-e6e506df8c2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/ExteriorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/ExteriorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/AutopilotDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/AutopilotDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/ChargingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/ChargingDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/InteriorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/InteriorDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcExteriorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcExteriorDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcTrimDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcTrimDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/TrimDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/TrimDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcAutopilotDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcAutopilotDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcChargingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcChargingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcInteriorDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcInteriorDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcSeatDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcSeatDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcTowDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcTowDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcWheelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcWheelDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/SeatDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/SeatDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/TowDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/TowDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/WheelDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/WheelDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,6 +1,7 @@
 package org.example.Dao.Jdbc;
 
 import org.example.Dao.SeatDao;
+import org.example.models.Exterior;
 import org.example.models.Seat;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -20,6 +21,19 @@ public class JdbcSeatDao implements SeatDao {
                      "FROM seat_number " +
                      "WHERE seat_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, seatId);
+        if(results.next()){
+            seat = mapRowToSeat(results);
+        }
+        return seat;
+    }
+
+    @Override
+    public Seat getSeatName(String seatName){
+        Seat seat = null;
+        String sql = "SELECT * " +
+                "FROM seat_number " +
+                "WHERE number_of_seats = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, seatName);
         if(results.next()){
             seat = mapRowToSeat(results);
         }

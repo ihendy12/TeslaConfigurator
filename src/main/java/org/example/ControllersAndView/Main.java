@@ -181,7 +181,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println();
                     System.out.println(model.getModel(modelChoice).getName() + "  " + model.getModel(modelChoice).getPrice());
                     System.out.println(trim.getTrim(trimChoice).getTrimName() + "  " + trim.getTrim(trimChoice).getTrimPrice());
-                    System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(trimChoice).getExteriorPrice());
+                    System.out.println(exterior.getExterior(exteriorChoice).getExteriorName() + "  " + exterior.getExterior(exteriorChoice).getExteriorPrice());
                     System.out.println(wheel.getWheel(wheelChoice).getWheelName() + "  " + wheel.getWheel(wheelChoice).getWheelPrice());
                     System.out.println(interior.getInterior(interiorChoice).getInteriorName() + "  " + interior.getInterior(interiorChoice).getInteriorPrice());
                     System.out.println(autopilot.getAutopilot(autoPilotChoice).getAutopilotName() + "  " + autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice());

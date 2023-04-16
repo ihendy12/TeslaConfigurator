@@ -2,6 +2,7 @@ package org.example.Dao.Jdbc;
 
 import org.example.Dao.AutopilotDao;
 import org.example.models.Autopilot;
+import org.example.models.Exterior;
 import org.example.models.Interior;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -29,6 +30,19 @@ public class JdbcAutopilotDao implements AutopilotDao {
 
 
 
+    }
+
+    @Override
+    public Autopilot getAutopilotName(String autopilotName){
+        Autopilot autopilot = null;
+        String sql = "SELECT * " +
+                "FROM autopilot_level " +
+                "WHERE autopilot_level_name = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, autopilotName);
+        if(results.next()){
+            autopilot = mapRowToAutopilot(results);
+        }
+        return autopilot;
     }
 
     @Override

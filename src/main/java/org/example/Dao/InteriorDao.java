@@ -8,6 +8,8 @@ import java.util.List;
 public interface InteriorDao {
     Interior getInterior(int interiorId);
 
+    Interior getInteriorName(String interiorName);
+
     List<Interior> getAllInteriors();
 
     Interior createInterior(Interior newInterior);

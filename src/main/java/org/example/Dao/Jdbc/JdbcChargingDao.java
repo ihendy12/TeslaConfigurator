@@ -2,6 +2,7 @@ package org.example.Dao.Jdbc;
 
 import org.example.Dao.ChargingDao;
 import org.example.models.Charging;
+import org.example.models.Exterior;
 import org.example.models.Interior;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -28,6 +29,19 @@ public class JdbcChargingDao implements ChargingDao {
 
 
 
+    }
+
+    @Override
+    public Charging getChargingName(String chargingName){
+        Charging charging = null;
+        String sql = "SELECT * " +
+                "FROM charging " +
+                "WHERE charging_type = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, chargingName);
+        if(results.next()){
+            charging = mapRowToCharging(results);
+        }
+        return charging;
     }
 
     private Charging mapRowToCharging(SqlRowSet rowSet){

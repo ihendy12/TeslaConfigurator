@@ -1,6 +1,7 @@
 package org.example.Dao.Jdbc;
 
 import org.example.Dao.InteriorDao;
+import org.example.models.Exterior;
 import org.example.models.Interior;
 import org.example.models.Wheel;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -30,6 +31,18 @@ public class JdbcInteriorDao implements InteriorDao {
 
 
 
+    }
+    @Override
+    public Interior getInteriorName(String interiorName){
+        Interior interior = null;
+        String sql = "SELECT * " +
+                "FROM interior_color " +
+                "WHERE interior_color_name = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, interiorName);
+        if(results.next()){
+            interior = mapRowToInterior(results);
+        }
+        return interior;
     }
 
     @Override

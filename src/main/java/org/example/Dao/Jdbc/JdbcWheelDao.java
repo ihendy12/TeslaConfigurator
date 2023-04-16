@@ -1,6 +1,7 @@
 package org.example.Dao.Jdbc;
 
 import org.example.Dao.WheelDao;
+import org.example.models.Exterior;
 import org.example.models.Trim;
 import org.example.models.Wheel;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -29,6 +30,19 @@ public class JdbcWheelDao implements WheelDao {
         }
         return wheel;
 
+    }
+
+    @Override
+    public Wheel getWheelName(String wheelName){
+        Wheel wheel = null;
+        String sql = "SELECT * " +
+                "FROM wheel_type " +
+                "WHERE wheel_type_name = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, wheelName);
+        if(results.next()){
+            wheel = mapRowToWheel(results);
+        }
+        return wheel;
     }
 
     @Override

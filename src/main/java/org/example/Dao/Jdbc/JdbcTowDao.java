@@ -2,6 +2,7 @@ package org.example.Dao.Jdbc;
 
 import org.example.Dao.TowDao;
 import org.example.models.Charging;
+import org.example.models.Exterior;
 import org.example.models.Tow;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -22,6 +23,19 @@ public class JdbcTowDao implements TowDao {
                 "WHERE tow_hitch_id = ?;";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, towId);
         if (results.next()) {
+            tow = mapRowToTow(results);
+        }
+        return tow;
+    }
+
+    @Override
+    public Tow getTowName(String towName){
+        Tow tow = null;
+        String sql = "SELECT * " +
+                "FROM tow_hitch " +
+                "WHERE tow_confirmed = ?;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, towName);
+        if(results.next()){
             tow = mapRowToTow(results);
         }
         return tow;
