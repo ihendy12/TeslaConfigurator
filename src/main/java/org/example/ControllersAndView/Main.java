@@ -123,13 +123,25 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             towChoice = tow.getTowName("NOT OFFERED ON THIS MODEL").getTowId();
                         displayNumberOfSeats3AndS();
                         seatsChoice = keyboard.nextInt();
-
+                            seatsChoice = seat.getSeatName("5 Seats").getSeatId();
                         displayAutopilotTypes();
                         autoPilotChoice = keyboard.nextInt();
-
+                        if (autoPilotChoice == 1){
+                            autoPilotChoice = autopilot.getAutopilotName("Autopilot").getAutopilotId();
+                        } else if (autoPilotChoice == 2){
+                            autoPilotChoice = autopilot.getAutopilotName("Enhanced Autopilot").getAutopilotId();
+                        } else if (autoPilotChoice == 3){
+                            autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
+                        }
                         displayChargingTypes();
                         chargingChoice =keyboard.nextInt();
-
+                        if (chargingChoice == 1){
+                            chargingChoice = charging.getChargingName("None").getChargingId();
+                        } else if (chargingChoice == 2){
+                            chargingChoice = charging.getChargingName("Mobile Bundle").getChargingId();
+                        } else if (chargingChoice == 3){
+                            chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
+                        }
                     } else {
                         if (trimChoice == 1) {
                             trimChoice = trim.getTrimName("3 Rear Wheel Drive").getTrimId();
@@ -168,13 +180,26 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                              towChoice = tow.getTowName("NOT OFFERED ON THIS MODEL").getTowId();
                         displayNumberOfSeats3AndS();
                         seatsChoice = keyboard.nextInt();
-
+                            seatsChoice = seat.getSeatName("5 Seats").getSeatId();
                         displayAutopilotTypes();
                         autoPilotChoice = keyboard.nextInt();
-
+                            if (autoPilotChoice == 1){
+                                autoPilotChoice = autopilot.getAutopilotName("Autopilot").getAutopilotId();
+                            } else if (autoPilotChoice == 2){
+                                autoPilotChoice = autopilot.getAutopilotName("Enhanced Autopilot").getAutopilotId();
+                            } else if (autoPilotChoice == 3){
+                                autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
+                            }
                         displayChargingTypes();
                         chargingChoice =keyboard.nextInt();
-
+                        chargingChoice =keyboard.nextInt();
+                        if (chargingChoice == 1){
+                            chargingChoice = charging.getChargingName("None").getChargingId();
+                        } else if (chargingChoice == 2){
+                            chargingChoice = charging.getChargingName("Mobile Bundle").getChargingId();
+                        } else if (chargingChoice == 3){
+                            chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
+                        }
                     }
 
 
@@ -254,13 +279,26 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             }
                         displayYPerformanceSeats();
                         seatsChoice = keyboard.nextInt();
-
+                            seatsChoice = seat.getSeatName("5 Seats").getSeatId();
                         displayAutopilotTypes();
                         autoPilotChoice = keyboard.nextInt();
-
+                        if (autoPilotChoice == 1){
+                            autoPilotChoice = autopilot.getAutopilotName("Autopilot").getAutopilotId();
+                        } else if (autoPilotChoice == 2){
+                            autoPilotChoice = autopilot.getAutopilotName("Enhanced Autopilot").getAutopilotId();
+                        } else if (autoPilotChoice == 3){
+                            autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
+                        }
                         displayChargingTypes();
                         chargingChoice = keyboard.nextInt();
-
+                        chargingChoice =keyboard.nextInt();
+                        if (chargingChoice == 1){
+                            chargingChoice = charging.getChargingName("None").getChargingId();
+                        } else if (chargingChoice == 2){
+                            chargingChoice = charging.getChargingName("Mobile Bundle").getChargingId();
+                        } else if (chargingChoice == 3){
+                            chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
+                        }
                     } else {
                         trimChoice = trim.getTrimName("Y Long Range").getTrimId();
                         displayYWheelTypes();
@@ -299,13 +337,32 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                         displayYSeatChoice();
                         seatsChoice = keyboard.nextInt();
+                        if (seatsChoice == 1){
+                            seatsChoice = seat.getSeatName("5 Seats").getSeatId();
 
+                        } else if (seatsChoice == 2){
+                            seatsChoice = seat.getSeatName("Y 7 Seats").getSeatId();
+
+                        }
                         displayAutopilotTypes();
                         autoPilotChoice = keyboard.nextInt();
-
+                        if (autoPilotChoice == 1){
+                            autoPilotChoice = autopilot.getAutopilotName("Autopilot").getAutopilotId();
+                        } else if (autoPilotChoice == 2){
+                            autoPilotChoice = autopilot.getAutopilotName("Enhanced Autopilot").getAutopilotId();
+                        } else if (autoPilotChoice == 3){
+                            autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
+                        }
                         displayChargingTypes();
                         chargingChoice = keyboard.nextInt();
-
+                        chargingChoice =keyboard.nextInt();
+                        if (chargingChoice == 1){
+                            chargingChoice = charging.getChargingName("None").getChargingId();
+                        } else if (chargingChoice == 2){
+                            chargingChoice = charging.getChargingName("Mobile Bundle").getChargingId();
+                        } else if (chargingChoice == 3){
+                            chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
+                        }
                     }
 
                     displayTotalPricing();
@@ -383,13 +440,26 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
                     displayNumberOfSeats3AndS();
                     seatsChoice = keyboard.nextInt();
-
+                        seatsChoice = seat.getSeatName("5 Seats").getSeatId();
                     displayAutopilotTypes();
                     autoPilotChoice = keyboard.nextInt();
-
+                    if (autoPilotChoice == 1){
+                        autoPilotChoice = autopilot.getAutopilotName("Autopilot").getAutopilotId();
+                    } else if (autoPilotChoice == 2){
+                        autoPilotChoice = autopilot.getAutopilotName("Enhanced Autopilot").getAutopilotId();
+                    } else if (autoPilotChoice == 3){
+                        autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
+                    }
                     displayChargingTypes();
                     chargingChoice = keyboard.nextInt();
-
+                    chargingChoice =keyboard.nextInt();
+                    if (chargingChoice == 1){
+                        chargingChoice = charging.getChargingName("None").getChargingId();
+                    } else if (chargingChoice == 2){
+                        chargingChoice = charging.getChargingName("Mobile Bundle").getChargingId();
+                    } else if (chargingChoice == 3){
+                        chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
+                    }
                     displayTotalPricing();
                     double total =  (tow.getTow(towChoice).getTowPrice() +
                             model.getModel(modelChoice).getPrice() +
@@ -462,13 +532,34 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         towChoice = tow.getTowName("X Tow Hitch").getTowId();
                     displayXSeats();
                     seatsChoice = keyboard.nextInt();
+                    if (seatsChoice == 1){
+                        seatsChoice = seat.getSeatName("5 Seats").getSeatId();
 
+                    } else if (seatsChoice == 2){
+                        seatsChoice = seat.getSeatName("6 Seats").getSeatId();
+
+                    } else if(seatsChoice == 3){
+                        seatsChoice = seat.getSeatName("X 7 Seats").getSeatId();
+                    }
                     displayAutopilotTypes();
                     autoPilotChoice = keyboard.nextInt();
-
+                    if (autoPilotChoice == 1){
+                        autoPilotChoice = autopilot.getAutopilotName("Autopilot").getAutopilotId();
+                    } else if (autoPilotChoice == 2){
+                        autoPilotChoice = autopilot.getAutopilotName("Enhanced Autopilot").getAutopilotId();
+                    } else if (autoPilotChoice == 3){
+                        autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
+                    }
                     displayChargingTypes();
                     chargingChoice = keyboard.nextInt();
-
+                    chargingChoice =keyboard.nextInt();
+                    if (chargingChoice == 1){
+                        chargingChoice = charging.getChargingName("None").getChargingId();
+                    } else if (chargingChoice == 2){
+                        chargingChoice = charging.getChargingName("Mobile Bundle").getChargingId();
+                    } else if (chargingChoice == 3){
+                        chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
+                    }
                     displayTotalPricing();
                     double total =  (tow.getTow(towChoice).getTowPrice() +
                             model.getModel(modelChoice).getPrice() +
