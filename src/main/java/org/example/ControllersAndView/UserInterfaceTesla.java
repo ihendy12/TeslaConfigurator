@@ -219,6 +219,20 @@ public interface UserInterfaceTesla {
         // PLUS displayChargingTypes in MODEL 3
         // PLUS displayTotalPricing in MODEL 3
 
+    //Displays Customer information
+    default void displayCustomerChoices(){
+        System.out.println("Please choose an option");
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("1. Find vehicle my customerId");
+        System.out.println("2. See a list of all orders");
+        System.out.println("3. Return to main menu");
+        System.out.println("4. Exit program");
+
+
+    }
+
 // END OF PROGRAM
     default void endOfProgram(){
         System.out.println("Thank you for using the Tesla Configurator, Goodbye!");

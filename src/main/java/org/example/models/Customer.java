@@ -11,6 +11,7 @@ public class Customer {
     private int autopilotId;
     private int chargingId;
     private int seatId;
+    private int towId;
     private int totalPrice;
 
     public Customer() {
@@ -24,6 +25,7 @@ public class Customer {
         this.wheelId = wheelId;
         this.interiorId = interiorId;
         this.autopilotId = autopilotId;
+
         this.chargingId = chargingId;
         this.seatId = seatId;
     }
@@ -106,5 +108,13 @@ public class Customer {
 
     public void setTotalPrice(int totalPrice) {
         this.totalPrice = totalPrice;
+    }
+
+    public int getTowId() {
+        return towId;
+    }
+
+    public void setTowId(int towId) {
+        this.towId = towId;
     }
 }

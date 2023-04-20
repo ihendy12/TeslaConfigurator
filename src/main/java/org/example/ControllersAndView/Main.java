@@ -2,6 +2,7 @@ package org.example.ControllersAndView;
 import org.example.Dao.*;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.example.Dao.Jdbc.*;
+import org.example.models.Customer;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -71,6 +72,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
         ChargingDao charging = new JdbcChargingDao(dataSource);
         SeatDao seat = new JdbcSeatDao(dataSource);
         TowDao tow = new JdbcTowDao(dataSource);
+        CustomerDao customer = new JdbcCustomerDao(dataSource);
 
         //MAIN MENU
 
@@ -583,6 +585,20 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println(seat.getSeat(seatsChoice).getNumOfSeats() + "  " + seat.getSeat(seatsChoice).getSeatPrice());
                     System.out.println();
                     System.out.println("Total Price: " + total);
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("Would you like to save this configuration build?");
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("1. Yes");
+                    System.out.println("2. No");
+                        int saveChoice = keyboard.nextInt();
+                        if (saveChoice == 1){
+
+                        } else if (saveChoice == 2){
+                            endOfProgram();
+                            run = false;
+                        }
 
                     endOfProgram();
                     run = false;
@@ -592,17 +608,31 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
             }
             // RETURNS EXISTING ORDERS
             else if (mainMenuChoice == 2){
-                System.out.println("Currently working on this section, come back later!");
-                try {
-                    TimeUnit.SECONDS.sleep(2);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
+
+
+                displayCustomerChoices();
+                    int customerOptionView = keyboard.nextInt();
+
+                    if (customerOptionView == 1){
+                        customer.createCustomer(new Customer());
+
+                    } else if(customerOptionView == 2){
+
+                    } else if (customerOptionView == 3){
+                        System.out.println();
+                        System.out.println();
+                        run();
+                    } else if(customerOptionView == 4){
+                        endOfProgram();
+                        run = false;
+                    }
+
             }
             //ENDS PROGRAM
             else if (mainMenuChoice == 3) {
-                run = false;
+
                 endOfProgram();
+                run = false;
             }
 
         }
