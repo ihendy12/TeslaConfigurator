@@ -59,6 +59,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
         boolean run = true;
         boolean endRequested =  false;
 
+
         BasicDataSource dataSource = new BasicDataSource();
         dataSource.setUrl("jdbc:postgresql://localhost:5432/TeslaConfigurator");
         dataSource.setUsername("postgres");
@@ -282,12 +283,18 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         System.out.println("Please save this for your records");
                         lineSegments();
                     } else if (saveChoice == 2){
+                        continue;
+                    }
+
+                    returnToMain();
+                    int returnToMainMenu = keyboard.nextInt();
+                    if(returnToMainMenu == 1){
+                        run();
+                    } else {
                         endOfProgram();
                         run = false;
                     }
 
-                    endOfProgram();
-                    run = false;
                 }
 
 
@@ -494,12 +501,17 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         System.out.println("Please save this for your records");
                         lineSegments();
                     } else if (saveChoice == 2){
+                        continue;
+                    }
+                    returnToMain();
+                    int returnToMainMenu = keyboard.nextInt();
+                    if(returnToMainMenu == 1){
+                        run();
+                    } else {
                         endOfProgram();
                         run = false;
                     }
 
-                    endOfProgram();
-                    run = false;
                 }
 
                 //MODEL S
@@ -632,12 +644,17 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         System.out.println("Please save this for your records");
                         lineSegments();
                     } else if (saveChoice == 2){
+                        continue;
+                    }
+                    returnToMain();
+                    int returnToMainMenu = keyboard.nextInt();
+                    if(returnToMainMenu == 1){
+                        run();
+                    } else {
                         endOfProgram();
                         run = false;
                     }
 
-                    endOfProgram();
-                    run = false;
                 }
 
 
@@ -781,24 +798,74 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             System.out.println("Please save this for your records");
                             lineSegments();
                         } else if (saveChoice == 2){
-                            endOfProgram();
-                            run = false;
+                           continue;
                         }
+                    returnToMain();
+                    int returnToMainMenu = keyboard.nextInt();
+                    if(returnToMainMenu == 1){
+                        run();
+                    } else {
+                        endOfProgram();
+                        run = false;
+                    }
 
-                    endOfProgram();
-                    run = false;
+
                 }
 
 
             }
             // RETURNS EXISTING ORDERS
             else if (mainMenuChoice == 2){
-
-
+                boolean secondaryMenu = true;
+                while (secondaryMenu){
+                lineSegments();
                 displayCustomerChoices();
                     int customerOptionView = keyboard.nextInt();
 
                     if (customerOptionView == 1){
+
+                        System.out.println("What is your order id number?: ");
+
+                        int orderIdNumber = keyboard.nextInt();
+                        Customer viewedCustomer = customer.getCustomerById(orderIdNumber);
+
+                        System.out.println("ORDER NUMBER: " + viewedCustomer.getCustomerId());
+                        System.out.println("MODEL CHOICE: " + model.getModel(viewedCustomer.getModelId()).getName());
+                        System.out.println("TRIM LEVEL: " + trim.getTrim(viewedCustomer.getTrimId()).getTrimName());
+                        System.out.println("EXTERIOR COLOR: " + exterior.getExterior(viewedCustomer.getExteriorId()).getExteriorName());
+                        System.out.println("WHEEL TYPE: " + wheel.getWheel(viewedCustomer.getWheelId()).getWheelName());
+                        System.out.println("INTERIOR COLOR: " + interior.getInterior(viewedCustomer.getInteriorId()).getInteriorName());
+                        System.out.println("AUTOPILOT LEVEL: " + autopilot.getAutopilot(viewedCustomer.getAutopilotId()).getAutopilotName());
+                        System.out.println("CHARGING TYPE: " + charging.getCharging(viewedCustomer.getChargingId()).getChargingName());
+                        System.out.println("TOW PACKAGE: " + tow.getTow(viewedCustomer.getTowId()).getTowConfirmed());
+                        System.out.println("SEATS: " + seat.getSeat(viewedCustomer.getSeatId()).getNumOfSeats());
+                        System.out.println("TOTAL PRICE: " + viewedCustomer.getTotalPrice());
+                        System.out.println();
+                        lineSegments();
+                        System.out.println("Would you like to make another selection?");
+                        System.out.println();
+                        System.out.println("1: Yes");
+                        System.out.println("2: No");
+                        int searchingAgainChoice = keyboard.nextInt();
+                        if (searchingAgainChoice == 1){
+                            continue;
+
+                        } else if (searchingAgainChoice == 2) {
+                            lineSegments();
+                            System.out.println("Would you like to return to the main menu?");
+                            System.out.println();
+                            System.out.println("1: Yes");
+                            System.out.println("2: No");
+                            int returnToMenu = keyboard.nextInt();
+                            if(returnToMenu == 1){
+                                secondaryMenu = false;
+                                run();
+                            } else {
+                                secondaryMenu = false;
+                                endOfProgram();
+                                run = false;
+                            }
+                        }
 
 
                     } else if(customerOptionView == 2){
@@ -808,11 +875,12 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         System.out.println();
                         run();
                     } else if(customerOptionView == 4){
+                        secondaryMenu = false;
                         endOfProgram();
                         run = false;
                     }
 
-            }
+            }}
             //ENDS PROGRAM
             else if (mainMenuChoice == 3) {
 

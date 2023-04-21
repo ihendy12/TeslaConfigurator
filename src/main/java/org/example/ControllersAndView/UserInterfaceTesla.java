@@ -223,9 +223,7 @@ public interface UserInterfaceTesla {
     default void displayCustomerChoices(){
         System.out.println("Please choose an option");
         System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("1. Find vehicle my customerId");
+        System.out.println("1. Find vehicle my order ID Number");
         System.out.println("2. See a list of all orders");
         System.out.println("3. Return to main menu");
         System.out.println("4. Exit program");
@@ -235,6 +233,16 @@ public interface UserInterfaceTesla {
 
     default void lineSegments(){
         System.out.println("================================================================================");
+    }
+
+    //return to main menu or exit prompt
+    default void returnToMain(){
+        System.out.println("Would you like to return to the main menu or exit the program?");
+        System.out.println();
+        System.out.println("1: Main Menu");
+        System.out.println("2: Exit");
+
+
     }
 
 // END OF PROGRAM
