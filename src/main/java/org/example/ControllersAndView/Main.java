@@ -77,6 +77,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
         //MAIN MENU
 
         while(run) {
+            lineSegments();
             printMainMenu();
 
             int mainMenuChoice = keyboard.nextInt();
@@ -84,25 +85,29 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
             //SENDS TO BUILDER
             if (mainMenuChoice == 1) {
-
+                lineSegments();
                 //Choose a Model
                 displayModels();
                 modelChoice = keyboard.nextInt();
 
                 //MODEL 3
                 if (modelChoice == 1){
+                    lineSegments();
                     display3TrimLevels();
                     trimChoice = keyboard.nextInt();
 
                     //If Performance, this way since they have some features provided that are options elsewhere
                     if (trimChoice == 3){
+                        lineSegments();
                         trimChoice = trim.getTrimName("3 Performance").getTrimId();
                         display3PerformanceWheelType();
                         wheelChoice = keyboard.nextInt();
                         wheelChoice = wheel.getWheelName("20\" Uberturbine Wheels").getWheelId();
+                        lineSegments();
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
                         if (exteriorChoice == 1) {
+
                             exteriorChoice = exterior.getExteriorName("3&Y Pearl White").getExteriorId();
                         } else if (exteriorChoice == 2) {
                             exteriorChoice = exterior.getExteriorName("3&Y Midnight Silver").getExteriorId();
@@ -113,6 +118,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (exteriorChoice == 5){
                             exteriorChoice = exterior.getExteriorName("3&Y Red Multi-Coat").getExteriorId();
                         }
+                        lineSegments();
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
                         if (interiorChoice == 1){
@@ -120,12 +126,15 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (interiorChoice == 2){
                             interiorChoice = interior.getInteriorName("3&Y White").getInteriorId();
                         }
+                        lineSegments();
                         display3AndSTow();
                         towChoice = keyboard.nextInt();
                             towChoice = tow.getTowName("NOT OFFERED ON THIS MODEL").getTowId();
+                        lineSegments();
                         displayNumberOfSeats3AndS();
                         seatsChoice = keyboard.nextInt();
                             seatsChoice = seat.getSeatName("5 Seats").getSeatId();
+                        lineSegments();
                         displayAutopilotTypes();
                         autoPilotChoice = keyboard.nextInt();
                         if (autoPilotChoice == 1){
@@ -135,6 +144,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (autoPilotChoice == 3){
                             autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
                         }
+                        lineSegments();
                         displayChargingTypes();
                         chargingChoice =keyboard.nextInt();
                         if (chargingChoice == 1){
@@ -150,6 +160,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (trimChoice == 2) {
                             trimChoice = trim.getTrimName("3 Long Range").getTrimId();
                         }
+                        lineSegments();
                         display3WheelTypes();
                         wheelChoice = keyboard.nextInt();
                         if(wheelChoice == 1){
@@ -157,6 +168,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if(wheelChoice == 2){
                             wheelChoice = wheel.getWheelName("19\" Sport Wheels").getWheelId();
                         }
+                        lineSegments();
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
                         if (exteriorChoice == 1) {
@@ -170,6 +182,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (exteriorChoice == 5){
                             exteriorChoice = exterior.getExteriorName("3&Y Red Multi-Coat").getExteriorId();
                         }
+                        lineSegments();
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
                         if (interiorChoice == 1){
@@ -177,12 +190,15 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (interiorChoice == 2){
                             interiorChoice = interior.getInteriorName("3&Y White").getInteriorId();
                         }
+                        lineSegments();
                         display3AndSTow();
                         towChoice = keyboard.nextInt();
                              towChoice = tow.getTowName("NOT OFFERED ON THIS MODEL").getTowId();
+                        lineSegments();
                         displayNumberOfSeats3AndS();
                         seatsChoice = keyboard.nextInt();
                             seatsChoice = seat.getSeatName("5 Seats").getSeatId();
+                        lineSegments();
                         displayAutopilotTypes();
                         autoPilotChoice = keyboard.nextInt();
                             if (autoPilotChoice == 1){
@@ -192,8 +208,8 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             } else if (autoPilotChoice == 3){
                                 autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
                             }
+                        lineSegments();
                         displayChargingTypes();
-                        chargingChoice =keyboard.nextInt();
                         chargingChoice =keyboard.nextInt();
                         if (chargingChoice == 1){
                             chargingChoice = charging.getChargingName("None").getChargingId();
@@ -205,7 +221,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     }
 
 
-
+                    lineSegments();
                     displayTotalPricing();
                     double total =  (tow.getTow(towChoice).getTowPrice() +
                                                 model.getModel(modelChoice).getPrice() +
@@ -230,10 +246,48 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println();
                     System.out.println("Total Price: " + total);
 
+                    System.out.println();
+                    System.out.println();
+                    lineSegments();
+                    System.out.println("Would you like to save this configuration build?");
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("1. Yes");
+                    System.out.println("2. No");
+                    int saveChoice = keyboard.nextInt();
+                    if (saveChoice == 1){
+
+                        Customer createdCustomer = new Customer();
+                        createdCustomer.setModelId(modelChoice);
+                        createdCustomer.setTrimId(trim.getTrim(trimChoice).getTrimId());
+                        createdCustomer.setExteriorId(exteriorChoice);
+                        createdCustomer.setWheelId(wheelChoice);
+                        createdCustomer.setInteriorId(interiorChoice);
+                        createdCustomer.setAutopilotId(autoPilotChoice);
+                        createdCustomer.setChargingId(chargingChoice);
+                        createdCustomer.setTowId(towChoice);
+                        createdCustomer.setSeatId(seatsChoice);
+                        createdCustomer.setTotalPrice((int) (tow.getTow(towChoice).getTowPrice() +
+                                model.getModel(modelChoice).getPrice() +
+                                trim.getTrim(trimChoice).getTrimPrice() +
+                                exterior.getExterior(trimChoice).getExteriorPrice() +
+                                wheel.getWheel(wheelChoice).getWheelPrice() +
+                                interior.getInterior(interiorChoice).getInteriorPrice() +
+                                autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice() +
+                                charging.getCharging(chargingChoice).getChargingPrice()));
+
+                        customer.createCustomer(createdCustomer);
+                        lineSegments();
+                        System.out.println("Your order number is : " + createdCustomer.getCustomerId());
+                        System.out.println("Please save this for your records");
+                        lineSegments();
+                    } else if (saveChoice == 2){
+                        endOfProgram();
+                        run = false;
+                    }
+
                     endOfProgram();
                     run = false;
-
-
                 }
 
 
@@ -243,15 +297,19 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
                 //MODEL Y
                 else if (modelChoice == 2){
+                    lineSegments();
                     displayYTrimLevels();
                     trimChoice = keyboard.nextInt();
 
                     if (trimChoice == 2){
                         trimChoice = trim.getTrimName("Y Performance").getTrimId();
 
+
+                        lineSegments();
                         displayYPerformanceWheels();
                         wheelChoice = keyboard.nextInt();
                             wheelChoice = wheel.getWheelName("21\" Uberturbine Wheels").getWheelId();
+                        lineSegments();
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
                         if (exteriorChoice == 1) {
@@ -265,6 +323,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (exteriorChoice == 5){
                             exteriorChoice = exterior.getExteriorName("3&Y Red Multi-Coat").getExteriorId();
                         }
+                        lineSegments();
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
                         if (interiorChoice == 1){
@@ -272,6 +331,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (interiorChoice == 2){
                             interiorChoice = interior.getInteriorName("3&Y White").getInteriorId();
                         }
+                        lineSegments();
                         displayYTowing();
                         towChoice = keyboard.nextInt();
                             if (towChoice == 1){
@@ -279,9 +339,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             } else if (towChoice == 2){
                                 towChoice = tow.getTowName("Y Tow Hitch").getTowId();
                             }
+                        lineSegments();
                         displayYPerformanceSeats();
                         seatsChoice = keyboard.nextInt();
                             seatsChoice = seat.getSeatName("5 Seats").getSeatId();
+                        lineSegments();
                         displayAutopilotTypes();
                         autoPilotChoice = keyboard.nextInt();
                         if (autoPilotChoice == 1){
@@ -291,9 +353,9 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (autoPilotChoice == 3){
                             autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
                         }
+                        lineSegments();
                         displayChargingTypes();
                         chargingChoice = keyboard.nextInt();
-                        chargingChoice =keyboard.nextInt();
                         if (chargingChoice == 1){
                             chargingChoice = charging.getChargingName("None").getChargingId();
                         } else if (chargingChoice == 2){
@@ -303,6 +365,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         }
                     } else {
                         trimChoice = trim.getTrimName("Y Long Range").getTrimId();
+                        lineSegments();
                         displayYWheelTypes();
                         wheelChoice = keyboard.nextInt();
                         if(wheelChoice == 1){
@@ -310,6 +373,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if(wheelChoice == 2){
                             wheelChoice = wheel.getWheelName("20\" Induction Wheels").getWheelId();
                         }
+                        lineSegments();
                         display3AndYExteriorColors();
                         exteriorChoice = keyboard.nextInt();
                         if (exteriorChoice == 1) {
@@ -323,6 +387,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (exteriorChoice == 5){
                             exteriorChoice = exterior.getExteriorName("3&Y Red Multi-Coat").getExteriorId();
                         }
+                        lineSegments();
                         display3AndYInteriorColors();
                         interiorChoice = keyboard.nextInt();
                         if (interiorChoice == 1){
@@ -330,6 +395,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (interiorChoice == 2){
                             interiorChoice = interior.getInteriorName("3&Y White").getInteriorId();
                         }
+                        lineSegments();
                         displayYTowing();
                         towChoice = keyboard.nextInt();
                         if (towChoice == 1){
@@ -337,6 +403,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (towChoice == 2){
                             towChoice = tow.getTowName("Y Tow Hitch").getTowId();
                         }
+                        lineSegments();
                         displayYSeatChoice();
                         seatsChoice = keyboard.nextInt();
                         if (seatsChoice == 1){
@@ -346,6 +413,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             seatsChoice = seat.getSeatName("Y 7 Seats").getSeatId();
 
                         }
+                        lineSegments();
                         displayAutopilotTypes();
                         autoPilotChoice = keyboard.nextInt();
                         if (autoPilotChoice == 1){
@@ -355,9 +423,9 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         } else if (autoPilotChoice == 3){
                             autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
                         }
+                        lineSegments();
                         displayChargingTypes();
                         chargingChoice = keyboard.nextInt();
-                        chargingChoice =keyboard.nextInt();
                         if (chargingChoice == 1){
                             chargingChoice = charging.getChargingName("None").getChargingId();
                         } else if (chargingChoice == 2){
@@ -366,7 +434,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
                         }
                     }
-
+                    lineSegments();
                     displayTotalPricing();
                     double total =  (tow.getTow(towChoice).getTowPrice() +
                             model.getModel(modelChoice).getPrice() +
@@ -390,15 +458,53 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println(seat.getSeat(seatsChoice).getNumOfSeats() + "  " + seat.getSeat(seatsChoice).getSeatPrice());
                     System.out.println();
                     System.out.println("Total Price: " + total);
+                    System.out.println();
+                    System.out.println();
+                    lineSegments();
+                    System.out.println("Would you like to save this configuration build?");
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("1. Yes");
+                    System.out.println("2. No");
+                    int saveChoice = keyboard.nextInt();
+                    if (saveChoice == 1){
+
+                        Customer createdCustomer = new Customer();
+                        createdCustomer.setModelId(modelChoice);
+                        createdCustomer.setTrimId(trim.getTrim(trimChoice).getTrimId());
+                        createdCustomer.setExteriorId(exteriorChoice);
+                        createdCustomer.setWheelId(wheelChoice);
+                        createdCustomer.setInteriorId(interiorChoice);
+                        createdCustomer.setAutopilotId(autoPilotChoice);
+                        createdCustomer.setChargingId(chargingChoice);
+                        createdCustomer.setTowId(towChoice);
+                        createdCustomer.setSeatId(seatsChoice);
+                        createdCustomer.setTotalPrice((int) (tow.getTow(towChoice).getTowPrice() +
+                                model.getModel(modelChoice).getPrice() +
+                                trim.getTrim(trimChoice).getTrimPrice() +
+                                exterior.getExterior(trimChoice).getExteriorPrice() +
+                                wheel.getWheel(wheelChoice).getWheelPrice() +
+                                interior.getInterior(interiorChoice).getInteriorPrice() +
+                                autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice() +
+                                charging.getCharging(chargingChoice).getChargingPrice()));
+
+                        customer.createCustomer(createdCustomer);
+                        lineSegments();
+                        System.out.println("Your order number is : " + createdCustomer.getCustomerId());
+                        System.out.println("Please save this for your records");
+                        lineSegments();
+                    } else if (saveChoice == 2){
+                        endOfProgram();
+                        run = false;
+                    }
 
                     endOfProgram();
                     run = false;
-
                 }
-
 
                 //MODEL S
                 else if (modelChoice == 3){
+                    lineSegments();
                     displaySTrimLevels();
                     trimChoice = keyboard.nextInt();
                     if (trimChoice == 1) {
@@ -406,7 +512,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (trimChoice == 2) {
                         trimChoice = trim.getTrimName("S Plaid").getTrimId();
                     }
-
+                    lineSegments();
                     displaySWheelTypes();
                     wheelChoice = keyboard.nextInt();
                     if(wheelChoice == 1){
@@ -414,6 +520,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if(wheelChoice == 2){
                         wheelChoice = wheel.getWheelName("20\" Arachnid Wheels").getWheelId();
                     }
+                    lineSegments();
                     displaySAndXExteriorColors();
                     exteriorChoice = keyboard.nextInt();
                     if (exteriorChoice == 1) {
@@ -427,6 +534,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (exteriorChoice == 5){
                         exteriorChoice = exterior.getExteriorName("S&X Ultra Red").getExteriorId();
                     }
+                    lineSegments();
                     displaySAndXInteriorColors();
                     interiorChoice = keyboard.nextInt();
                     if (interiorChoice == 1){
@@ -436,13 +544,15 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (interiorChoice == 3){
                         interiorChoice = interior.getInteriorName("S&X Cream").getInteriorId();
                     }
+                    lineSegments();
                     display3AndSTow();
                     towChoice = keyboard.nextInt();
                         towChoice = tow.getTowName("NOT OFFERED ON THIS MODEL").getTowId();
-
+                    lineSegments();
                     displayNumberOfSeats3AndS();
                     seatsChoice = keyboard.nextInt();
                         seatsChoice = seat.getSeatName("5 Seats").getSeatId();
+                    lineSegments();
                     displayAutopilotTypes();
                     autoPilotChoice = keyboard.nextInt();
                     if (autoPilotChoice == 1){
@@ -452,9 +562,9 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (autoPilotChoice == 3){
                         autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
                     }
+                    lineSegments();
                     displayChargingTypes();
                     chargingChoice = keyboard.nextInt();
-                    chargingChoice =keyboard.nextInt();
                     if (chargingChoice == 1){
                         chargingChoice = charging.getChargingName("None").getChargingId();
                     } else if (chargingChoice == 2){
@@ -462,6 +572,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (chargingChoice == 3){
                         chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
                     }
+                    lineSegments();
                     displayTotalPricing();
                     double total =  (tow.getTow(towChoice).getTowPrice() +
                             model.getModel(modelChoice).getPrice() +
@@ -485,14 +596,55 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println(seat.getSeat(seatsChoice).getNumOfSeats() + "  " + seat.getSeat(seatsChoice).getSeatPrice());
                     System.out.println();
                     System.out.println("Total Price: " + total);
+                    System.out.println();
+                    System.out.println();
+                    lineSegments();
+                    System.out.println("Would you like to save this configuration build?");
+                    System.out.println();
+                    System.out.println();
+                    System.out.println("1. Yes");
+                    System.out.println("2. No");
+                    int saveChoice = keyboard.nextInt();
+                    if (saveChoice == 1){
+
+                        Customer createdCustomer = new Customer();
+                        createdCustomer.setModelId(modelChoice);
+                        createdCustomer.setTrimId(trim.getTrim(trimChoice).getTrimId());
+                        createdCustomer.setExteriorId(exteriorChoice);
+                        createdCustomer.setWheelId(wheelChoice);
+                        createdCustomer.setInteriorId(interiorChoice);
+                        createdCustomer.setAutopilotId(autoPilotChoice);
+                        createdCustomer.setChargingId(chargingChoice);
+                        createdCustomer.setTowId(towChoice);
+                        createdCustomer.setSeatId(seatsChoice);
+                        createdCustomer.setTotalPrice((int) (tow.getTow(towChoice).getTowPrice() +
+                                model.getModel(modelChoice).getPrice() +
+                                trim.getTrim(trimChoice).getTrimPrice() +
+                                exterior.getExterior(trimChoice).getExteriorPrice() +
+                                wheel.getWheel(wheelChoice).getWheelPrice() +
+                                interior.getInterior(interiorChoice).getInteriorPrice() +
+                                autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice() +
+                                charging.getCharging(chargingChoice).getChargingPrice()));
+
+                        customer.createCustomer(createdCustomer);
+                        lineSegments();
+                        System.out.println("Your order number is : " + createdCustomer.getCustomerId());
+                        System.out.println("Please save this for your records");
+                        lineSegments();
+                    } else if (saveChoice == 2){
+                        endOfProgram();
+                        run = false;
+                    }
+
                     endOfProgram();
                     run = false;
-
                 }
+
 
 
                 //MODEL X
                 else if(modelChoice == 4){
+                    lineSegments();
                     displayXTrimLevels();
                     trimChoice = keyboard.nextInt();
                     if (trimChoice == 1) {
@@ -500,6 +652,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (trimChoice == 2) {
                         trimChoice = trim.getTrimName("X Plaid").getTrimId();
                     }
+                    lineSegments();
                     displayXWheelTypes();
                     wheelChoice = keyboard.nextInt();
                     if(wheelChoice == 1){
@@ -507,6 +660,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if(wheelChoice == 2){
                         wheelChoice = wheel.getWheelName("22\" Turbine Wheels").getWheelId();
                     }
+                    lineSegments();
                     displaySAndXExteriorColors();
                     exteriorChoice = keyboard.nextInt();
                     if (exteriorChoice == 1) {
@@ -520,6 +674,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (exteriorChoice == 5){
                         exteriorChoice = exterior.getExteriorName("S&X Ultra Red").getExteriorId();
                     }
+                    lineSegments();
                     displaySAndXInteriorColors();
                     interiorChoice = keyboard.nextInt();
                     if (interiorChoice == 1){
@@ -529,9 +684,11 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (interiorChoice == 3){
                         interiorChoice = interior.getInteriorName("S&X Cream").getInteriorId();
                     }
+                    lineSegments();
                     displayXTowPackage();
                     towChoice = keyboard.nextInt();
                         towChoice = tow.getTowName("X Tow Hitch").getTowId();
+                    lineSegments();
                     displayXSeats();
                     seatsChoice = keyboard.nextInt();
                     if (seatsChoice == 1){
@@ -543,6 +700,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if(seatsChoice == 3){
                         seatsChoice = seat.getSeatName("X 7 Seats").getSeatId();
                     }
+                    lineSegments();
                     displayAutopilotTypes();
                     autoPilotChoice = keyboard.nextInt();
                     if (autoPilotChoice == 1){
@@ -552,9 +710,10 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (autoPilotChoice == 3){
                         autoPilotChoice = autopilot.getAutopilotName("Full-Self Driving").getAutopilotId();
                     }
+                    lineSegments();
                     displayChargingTypes();
                     chargingChoice = keyboard.nextInt();
-                    chargingChoice =keyboard.nextInt();
+
                     if (chargingChoice == 1){
                         chargingChoice = charging.getChargingName("None").getChargingId();
                     } else if (chargingChoice == 2){
@@ -562,6 +721,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     } else if (chargingChoice == 3){
                         chargingChoice = charging.getChargingName("Wall Connector").getChargingId();
                     }
+                    lineSegments();
                     displayTotalPricing();
                     double total =  (tow.getTow(towChoice).getTowPrice() +
                             model.getModel(modelChoice).getPrice() +
@@ -587,6 +747,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println("Total Price: " + total);
                     System.out.println();
                     System.out.println();
+                    lineSegments();
                     System.out.println("Would you like to save this configuration build?");
                     System.out.println();
                     System.out.println();
@@ -594,8 +755,31 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println("2. No");
                         int saveChoice = keyboard.nextInt();
                         if (saveChoice == 1){
-                        customer.createCustomer(modelChoice, trimChoice, exteriorChoice, wheelChoice, interiorChoice, autoPilotChoice, chargingChoice,
-                                towChoice, seatsChoice, total);
+
+                        Customer createdCustomer = new Customer();
+                        createdCustomer.setModelId(modelChoice);
+                        createdCustomer.setTrimId(trim.getTrim(trimChoice).getTrimId());
+                        createdCustomer.setExteriorId(exteriorChoice);
+                        createdCustomer.setWheelId(wheelChoice);
+                        createdCustomer.setInteriorId(interiorChoice);
+                        createdCustomer.setAutopilotId(autoPilotChoice);
+                        createdCustomer.setChargingId(chargingChoice);
+                        createdCustomer.setTowId(towChoice);
+                        createdCustomer.setSeatId(seatsChoice);
+                        createdCustomer.setTotalPrice((int) (tow.getTow(towChoice).getTowPrice() +
+                                                        model.getModel(modelChoice).getPrice() +
+                                                        trim.getTrim(trimChoice).getTrimPrice() +
+                                                        exterior.getExterior(trimChoice).getExteriorPrice() +
+                                                        wheel.getWheel(wheelChoice).getWheelPrice() +
+                                                        interior.getInterior(interiorChoice).getInteriorPrice() +
+                                                        autopilot.getAutopilot(autoPilotChoice).getAutopilotPrice() +
+                                                        charging.getCharging(chargingChoice).getChargingPrice()));
+
+                        customer.createCustomer(createdCustomer);
+                            lineSegments();
+                            System.out.println("Your order number is : " + createdCustomer.getCustomerId());
+                            System.out.println("Please save this for your records");
+                            lineSegments();
                         } else if (saveChoice == 2){
                             endOfProgram();
                             run = false;
@@ -615,7 +799,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     int customerOptionView = keyboard.nextInt();
 
                     if (customerOptionView == 1){
-                        customer.createCustomer(new Customer(customer.));
+
 
                     } else if(customerOptionView == 2){
 

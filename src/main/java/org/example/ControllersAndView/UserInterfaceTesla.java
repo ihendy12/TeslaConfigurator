@@ -233,6 +233,10 @@ public interface UserInterfaceTesla {
 
     }
 
+    default void lineSegments(){
+        System.out.println("================================================================================");
+    }
+
 // END OF PROGRAM
     default void endOfProgram(){
         System.out.println("Thank you for using the Tesla Configurator, Goodbye!");

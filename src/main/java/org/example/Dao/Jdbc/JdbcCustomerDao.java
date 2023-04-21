@@ -29,22 +29,11 @@ public class JdbcCustomerDao implements CustomerDao {
         return customer;
     }
 
-    public Customer getCustomerPrices(int customerId) {
-        Customer customer = null;
-        String sql = "SELECT * " +
-                "FROM customer " +
-                "WHERE customer_id = ?;";
-        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, customerId);
-        if(results.next()) {
-            customer = mapCustomerToRow(results);
-        }
-        return customer;
-    }
 
     @Override
     public Customer createCustomer(Customer newCustomer) {
         String sql = "INSERT INTO customer " +
-                "(model_id, trim_level, exterior_color_id, wheel_type_id, interior_color_id, autopilot_level_id, charging_id, " +
+                "(model_id, trim_level_id, exterior_color_id, wheel_type_id, interior_color_id, autopilot_level_id, charging_id, " +
                 "tow_hitch_id, seat_id, total_price) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING customer_id;";
         int newId = jdbcTemplate.queryForObject(sql, Integer.class, newCustomer.getModelId(), newCustomer.getTrimId()
@@ -62,7 +51,7 @@ public class JdbcCustomerDao implements CustomerDao {
         Customer customer = new Customer();
         customer.setCustomerId(rowSet.getInt("customer_id"));
         customer.setModelId(rowSet.getInt("model_id"));
-        customer.setTrimId(rowSet.getInt("trim_level"));
+        customer.setTrimId(rowSet.getInt("trim_level_id"));
         customer.setExteriorId(rowSet.getInt("exterior_color_id"));
         customer.setWheelId(rowSet.getInt("wheel_type_id"));
         customer.setInteriorId(rowSet.getInt("interior_color_id"));
