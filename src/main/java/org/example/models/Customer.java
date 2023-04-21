@@ -17,8 +17,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int customerId, int modelId, int trimId, int exteriorId, int wheelId, int interiorId, int autopilotId, int chargingId, int seatId) {
-        this.customerId = customerId;
+    public Customer( int modelId, int trimId, int exteriorId, int wheelId, int interiorId, int autopilotId, int chargingId, int seatId) {
+
         this.modelId = modelId;
         this.trimId = trimId;
         this.exteriorId = exteriorId;

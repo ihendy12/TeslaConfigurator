@@ -594,7 +594,8 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     System.out.println("2. No");
                         int saveChoice = keyboard.nextInt();
                         if (saveChoice == 1){
-
+                        customer.createCustomer(modelChoice, trimChoice, exteriorChoice, wheelChoice, interiorChoice, autoPilotChoice, chargingChoice,
+                                towChoice, seatsChoice, total);
                         } else if (saveChoice == 2){
                             endOfProgram();
                             run = false;
@@ -614,7 +615,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     int customerOptionView = keyboard.nextInt();
 
                     if (customerOptionView == 1){
-                        customer.createCustomer(new Customer());
+                        customer.createCustomer(new Customer(customer.));
 
                     } else if(customerOptionView == 2){
 
