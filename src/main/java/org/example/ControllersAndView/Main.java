@@ -7,6 +7,8 @@ import org.example.models.Customer;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -808,8 +810,6 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         endOfProgram();
                         run = false;
                     }
-
-
                 }
 
 
@@ -860,15 +860,47 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             if(returnToMenu == 1){
                                 secondaryMenu = false;
                                 run();
-                            } else {
-                                secondaryMenu = false;
+                            } else if (returnToMenu == 2){
                                 endOfProgram();
                                 run = false;
+
                             }
                         }
 
 
                     } else if(customerOptionView == 2){
+
+                        List<Customer> customers = customer.getAllCustomerOrders();
+
+                        for (Customer value : customers) {
+                            System.out.println("**** ORDER NUMBER: " + value.getCustomerId() + " ****");
+                            System.out.println("  MODEL: " + model.getModel(value.getModelId()).getName());
+                            System.out.println("  TRIM LEVEL: " + trim.getTrim(value.getTrimId()).getTrimName());
+                            System.out.println("  EXTERIOR COLOR: " + exterior.getExterior(value.getExteriorId()).getExteriorName());
+                            System.out.println("  WHEEL TYPE: " + wheel.getWheel(value.getWheelId()).getWheelName());
+                            System.out.println("  INTERIOR COLOR: " + interior.getInterior(value.getInteriorId()).getInteriorName());
+                            System.out.println("  AUTOPILOT LEVEL: " + autopilot.getAutopilot(value.getAutopilotId()).getAutopilotName());
+                            System.out.println("  CHARGING TYPE: " + charging.getCharging(value.getChargingId()).getChargingName());
+                            System.out.println("  TOW PACKAGE: " + tow.getTow(value.getTowId()).getTowConfirmed());
+                            System.out.println("  SEATS: " + seat.getSeat(value.getSeatId()).getNumOfSeats());
+                            System.out.println("  TOTAL PRICE: " + value.getTotalPrice());
+
+                        }
+
+                        lineSegments();
+                        System.out.println("Would you like to return to the main menu?");
+                        System.out.println();
+                        System.out.println("1: Yes");
+                        System.out.println("2: No");
+                        int returnToMenu = keyboard.nextInt();
+                        if (returnToMenu == 1) {
+                            run();
+                        } else if (returnToMenu == 2) {
+
+                            endOfProgram();
+                            secondaryMenu = false;
+                            run = false;
+                        }
 
                     } else if (customerOptionView == 3){
                         System.out.println();
@@ -880,7 +912,8 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         run = false;
                     }
 
-            }}
+                }
+            }
             //ENDS PROGRAM
             else if (mainMenuChoice == 3) {
 

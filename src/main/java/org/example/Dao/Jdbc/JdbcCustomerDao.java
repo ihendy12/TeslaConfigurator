@@ -7,6 +7,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JdbcCustomerDao implements CustomerDao {
 
@@ -27,6 +29,18 @@ public class JdbcCustomerDao implements CustomerDao {
             customer = mapCustomerToRow(results);
         }
         return customer;
+    }
+
+    @Override
+    public List<Customer> getAllCustomerOrders() {
+        List <Customer> customers = new ArrayList<>();
+        String sql = "SELECT * " +
+                     "FROM customer ORDER BY customer_id;";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+        while (results.next()){
+            customers.add(mapCustomerToRow(results));
+        }
+        return customers;
     }
 
 
