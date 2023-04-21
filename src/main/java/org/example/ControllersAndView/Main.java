@@ -26,6 +26,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
     int seatsChoice = 0;
     int autoPilotChoice = 0;
     int chargingChoice = 0;
+    int returnToMenu = 0;
 
     final String url =  "jdbc:postgresql://localhost:5432/TeslaConfigurator";
     final String user = "postgres";
@@ -292,9 +293,10 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     int returnToMainMenu = keyboard.nextInt();
                     if(returnToMainMenu == 1){
                         run();
-                    } else {
+                    } else if(returnToMainMenu == 2){
                         endOfProgram();
                         run = false;
+                        System.exit(1);
                     }
 
                 }
@@ -509,9 +511,10 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     int returnToMainMenu = keyboard.nextInt();
                     if(returnToMainMenu == 1){
                         run();
-                    } else {
+                    } else if(returnToMainMenu == 2){
                         endOfProgram();
                         run = false;
+                        System.exit(1);
                     }
 
                 }
@@ -652,9 +655,10 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     int returnToMainMenu = keyboard.nextInt();
                     if(returnToMainMenu == 1){
                         run();
-                    } else {
+                    } else if(returnToMainMenu == 2){
                         endOfProgram();
                         run = false;
+                        System.exit(1);
                     }
 
                 }
@@ -806,9 +810,10 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                     int returnToMainMenu = keyboard.nextInt();
                     if(returnToMainMenu == 1){
                         run();
-                    } else {
+                    } else if(returnToMainMenu == 2){
                         endOfProgram();
                         run = false;
+                        System.exit(1);
                     }
                 }
 
@@ -863,6 +868,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             } else if (returnToMenu == 2){
                                 endOfProgram();
                                 run = false;
+                                System.exit(1);
 
                             }
                         }
@@ -900,6 +906,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                             endOfProgram();
                             secondaryMenu = false;
                             run = false;
+                            System.exit(1);
                         }
 
                     } else if (customerOptionView == 3){
@@ -910,6 +917,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
                         secondaryMenu = false;
                         endOfProgram();
                         run = false;
+                        System.exit(1);
                     }
 
                 }
@@ -919,6 +927,7 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
 
                 endOfProgram();
                 run = false;
+                System.exit(1);
             }
 
         }

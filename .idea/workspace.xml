@@ -7,8 +7,6 @@
     <list default="true" id="89a02d96-c6e3-40f3-87f0-e6e506df8c2a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcCustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcCustomerDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
