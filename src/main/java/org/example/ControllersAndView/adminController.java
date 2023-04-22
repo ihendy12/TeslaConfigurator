@@ -1,22 +1,18 @@
 package org.example.ControllersAndView;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
+import java.util.logging.*;
+import java.util.logging.Level;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-import org.example.Dao.ModelDao;
-import org.example.models.Model;
-
-import java.util.List;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.*;
+import java.util.logging.Logger;
 @RestController
-@RequestMapping
+@RequestMapping("/TeslaConfigurator")
 public class adminController {
+   public Logger logger = Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
 
 }
 

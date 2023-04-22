@@ -11,6 +11,12 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.logging.*;
+
+import static java.util.logging.Level.OFF;
 
 
 public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
@@ -44,12 +50,23 @@ public class Main implements Runnable, UserInterfaceTesla, BasicConsole {
     }
 
 
+    private final static Logger LOGGER =
+            Logger.getLogger(Logger.GLOBAL_LOGGER_NAME);
+    public void turnOffLogger()
+    {
+        LOGGER.setLevel(OFF);
+    }
 
 
     public static void main(String[] args) {
         Main main = new Main();
         main.connect();
         main.run();
+        main.turnOffLogger();
+        LogManager lgmngr = LogManager.getLogManager();
+
+        Logger log = lgmngr.getLogger(Logger.GLOBAL_LOGGER_NAME);
+        log.setLevel(Level.OFF);
 
 
 
