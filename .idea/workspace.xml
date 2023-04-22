@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89a02d96-c6e3-40f3-87f0-e6e506df8c2a" name="Changes" comment="">
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
->>>>>>> 12dc0690d55bf79afbe2d12602a0bcf9327313cd
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/adminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ControllersAndView/adminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcAutopilotDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Dao/Jdbc/JdbcAutopilotDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +51,7 @@
     "last_opened_file_path": "/Users/ianhenderson/Documents/Personal/TeslaConfigurator",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.import"
+    "project.structure.side.proportion": "0.5954023"
   }
 }]]></component>
   <component name="RunManager">
@@ -91,17 +84,6 @@
       <updated>1679456565726</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
